@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 header{
     position: absolute;
     top: 0;
@@ -79,3 +80,16 @@ header ul li a{
     }
   
 }
+=======
+@charset "UTF-8";
+
+:root{
+    --MenuColor: #f1f1f1;
+    --MenuColorHover: #ababab;
+    --ColorTxt: #f1f1f1;
+    --ColorBTNjogar: #00f08e;
+    --ColorBlack: #000;
+    --ColorWhite: #fff;
+}
+
+>>>>>>> 26878ecd1c7e5aad80d7cda8ca46ab42ae9422b1
