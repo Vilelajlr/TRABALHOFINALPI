@@ -7,18 +7,61 @@
     --ColorBTNjogar: #00f08e;
     --ColorBlack: #000;
     --ColorWhite: #fff;
-<<<<<<< HEAD
 }
 
 /* Gerais*/
 
-.flex{
+
+header .flex{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 /* Header */
-=======
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    z-index: 999; /* Garante que o header esteja sempre acima do conteúdo */
 }
->>>>>>> 2fad927b026e4bf767088815953aa8372c2badaa
+
+/* Estilo do header quando estiver na parte superior da página */
+header.scroll {
+    background-color: rgba(0, 0, 0, 0.7); /* Cor de fundo com transparência */
+    transition: background-color 0.5s ease; /* Adiciona uma transição suave */
+}
+
+header .interface{
+    padding: 40px 4%;
+}
+
+header .menu-desktop .menu ul{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+header .menu-desktop .menu ul li a{
+    color: var(--MenuColor);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: 1s;
+    display: block;
+}
+
+header .menu-desktop .menu ul li a:hover{
+    color: var(--MenuColorHover);
+    transform: scale(1.1);
+}
+
+header .logo a{
+    text-decoration: none;
+    color:var(--MenuColor);
+}
+
+header .logo a h1{
+    font-size: 2rem;
+}
