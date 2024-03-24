@@ -47,16 +47,16 @@ section .jogo-da-velha{
     flex-direction: column;
 }
 
-h1, h2, h3{
+h1{
     text-align: center;
     color: #f1f1f1;
 }
 
-hr{
+main h2{
+    color: #f1f1f1;
+    font-size: 26px;
     font-weight: bold;
-    height: 3px;
-    background: f1f1f1;
-    margin-bottom: 10px;
+    
 }
 
 .game{
