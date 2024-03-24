@@ -3,7 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentPlayer = document.querySelector('.currentPlayer');
     let selected;
     let player = 'X';
-
+    let contO = 0;
+    let contX = 0;
+    const pontosX = document.getElementById('pontosX');
+    const pontosO = document.getElementById('pontosO');
+    pontosX.textContent = 'PONTOS DO JOGADOR 1: ' + contX;
+    pontosO.textContent = 'PONTOS DO JOGADOR 2: ' + contO;
 
     let positions =[
         [1, 2, 3],
@@ -18,13 +23,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function init(){
         selected = [];
-        currentPlayer.innerHTML = 'JOGADOR DA VEZ: ' +player;
+
+        if(player === 'X'){
+            currentPlayer.innerHTML = 'VEZ DO JOGADOR: 1';
+        }else{
+            currentPlayer.innerHTML = 'VEZ DO JOGADOR: 2';
+        }
 
         document.querySelectorAll('.game button').forEach((item) => {
             item.innerHTML = '';
             item.addEventListener('click', newMove);
         });
-
     }
 
     init();
@@ -40,13 +49,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }, [100]);
 
         player = player === 'X' ? 'O' : 'X';
-        currentPlayer.innerHTML = 'JOGADOR DA VEZ:' + player;
+
+        if(player === 'X'){
+            currentPlayer.innerHTML = 'VEZ DO JOGADOR: 1';
+        }else{
+            currentPlayer.innerHTML = 'VEZ DO JOGADOR: 2';
+        }
     }
 
     function check(){
+
         let playerLastMove = player === 'X' ? 'O' : 'X';
         const jogador = document.getElementById('winner');
-
         const items = selected
         .map((item, i) => [item, i])
         .filter((item) => item[0] === playerLastMove)
@@ -54,14 +68,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
         for(pos of positions){
             if(pos.every((item) => items.includes(item))){
-                jogador.textContent = 'JOGADOR ' + playerLastMove + ' VENCEU!!';
+                jogador.textContent = 'Jogador ' + playerLastMove + ' venceu!!';
+                if(playerLastMove === 'X'){
+                    jogador.textContent = 'Jogador 1 venceu!!!';
+                    contX++;
+                    pontosX.textContent = 'PONTOS DO JOGADOR 1: ' + contX;
+                }else{
+                    jogador.textContent = 'Jogador 2 venceu!!!';
+                    contO++;
+                    pontosO.textContent = 'PONTOS DO JOGADOR 2: ' + contO;
+                }
                 init();
                 return;
             }
         }
 
         if(selected.filter((item) => item).length === 9){
-            alert("DEU VELHA!");
+            jogador.textContent = 'DEU VELHA!!!!';
             init();
             return;
         }

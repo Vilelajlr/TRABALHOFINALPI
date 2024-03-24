@@ -66,9 +66,16 @@
         <div class="container-background">
             <div class="container-desfoque">
                 <div class="interface">
+                    <div class="jogador">
+                        <div class="text">
+                            <h2>Jogador 1 = X</h2>
+                            <h2>Jogador 2 = O</h2>
+                        </div><!-- text -->
+                    </div><!-- jogador -->
                     <div class="flex">
                         <div class="vez-do-jogador">
                             <h2 class="currentPlayer"></h2>
+                            <h2 id="winner"></h2>
                         </div><!-- vez-do-jogador -->
                         <div class="jogo-da-velha">
                             <div class="game">
@@ -84,7 +91,8 @@
                             </div><!-- game -->
                         </div><!-- jogo-da-velha -->
                         <div class="ganhou">
-                            <h2 id="winner"></h2>
+                            <h2 id="pontosX"></h2>
+                            <h2 id="pontosO"></h2>
                         </div>
                     </div><!-- flex -->
                 </div><!-- interface -->
