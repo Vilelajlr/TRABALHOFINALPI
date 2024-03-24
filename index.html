@@ -36,7 +36,7 @@
 <body>
 
     <header>
-        <div class="container-header">
+        <div class="container-header" >
             <div class="interface">
                 <div class="flex">
                     <div class="logo">
@@ -48,8 +48,8 @@
                     <div class="menu-desktop">
                         <nav class="menu">
                             <ul>
-                                <li><a href="index.html">Início</a></li>
-                                <li><a href="games.html">Jogos</a></li>
+                                <li><a href="#inicio">Início</a></li>
+                                <li><a href="#jogos">Jogos</a></li>
                                 <li><a href="about.html">Como Jogar</a></li>
                                 <li><a href="contact.html">Entre em Contato</a></li>
                             </ul>
@@ -61,7 +61,7 @@
     </header>
     
     <main>
-        <div class="container-main-topo">
+        <div class="container-main-topo" id="inicio">
             <div class="container-desfoque">
                 <div class="interface">
                     <div class="flex">
@@ -70,16 +70,21 @@
                                 <div class="titulo">
                                     <h1>Jogo da Velha</h1>
                                     <p>É um jogo de regras extremamente simples, que não traz grandes dificuldades para seus jogadores e é facilmente aprendido. O jogo é jogado em um tabuleiro de dimensões 3x3, onde dois jogadores disputam para completar uma linha com suas respectivas peças. O jogador que conseguir completar uma linha primeiro, vence a partida.</p>                                
+<<<<<<< HEAD
                                     <a href="jogo_da_velha.html" class="btn">Jogar</a>
                                 </div>
+=======
+                                    <a href="jogoDaVelha.html" class="btn">Jogar</a>
+                                </div> <!--Titulo-->
+>>>>>>> d6ca176561d5fe8c23ee20f462e31dbe157571ec
                             </div> <!--TextBox-->
 
                             <div class="textBox campoMinado">
                                 <div class="titulo">
                                     <h1>Campo Minado</h1>
-                                    <p>É um jogo de tabuleiro composto por casas, onde o jogador deve descobrir onde estão as minas sem acioná-las. O jogo é jogado em um tabuleiro de dimensões 10x10, onde o jogador deve clicar nas casas para descobrir onde estão as minas. O jogador que conseguir descobrir todas as minas, vence a partida.</p>
+                                    <p>É um jogo de tabuleiro composto por casas, onde o jogador deve descobrir onde estão as minas sem acioná-las. O jogo é jogado em um tabuleiro de dimensões 10x10, onde o jogador deve clicar nas casas para descobrir onde estão as minas. O jogador que conseguir descobrir todas as minas, vence a partida.</p> 
                                     <a href="campoMinado.html" class="btn">Jogar</a>
-                                </div>
+                                </div> <!--Titulo-->
                             </div> <!--TextBox-->
 
                             <div class="textBox adivinhacao">
@@ -87,7 +92,7 @@
                                     <h1>Adivinhação</h1>
                                     <p>É um jogo de adivinhação de números, onde o jogador deve adivinhar um número aleatório gerado pelo computador. O jogador deve adivinhar o número correto em até 10 tentativas. O jogador que conseguir adivinhar o número correto, vence a partida.</p>
                                     <a href="adivinhacao.html" class="btn">Jogar</a>
-                                </div>
+                                </div> <!--Titulo-->
                             </div> <!--TextBox-->
 
                             <div class="img-box">
@@ -103,34 +108,111 @@
                             </ul>
                         </div> <!--Thumb-->
 
-                        <div class="sci">
-                            <ul>
-                                <li><a href="#"><img src="images/facebook.png"></a></li>
-                                <li><a href="#"><img src="images/twitter.png"></a></li>
-                                <li><a href="#"><img src="images/instagram.png"></a></li>
-                            </ul>
-                        </div> <!--Sci-->
-
                     </div> <!--Flex-->
                 </div> <!--Interface-->
             </div> <!--Container-Desfoque-->
         </div><!--Container-main-topo-->
 
-        <div class="container-main-meio">
+        <div class="container-main-meio" id="jogos">
             <div class="interface">
                 <div class="flex">
+                    <div class="txt-Jogos">
+                        <h1>Jogos OnGames.com</h1>
+                    </div><!--fim txt-Jogos-->
                     <div class="card-jogos">
                         <div class="cards">
-                            <div class="div">
+                            <div class="img-cards">
                                 <img src="images/thumb1.png" alt="Jogo da Velha">
-                            </div>
+                            </div>  <!--Img-Card-->
+                            <div class="txt-card">
+                                <h4>Jogo da Velha</h4>
+                                <a href="#" class="btn">Jogar Agora</a>
+                            </div> <!--Txt-Card-->
+                        </div> <!--Cards-->
+
+                        <div class="cards">
+                            <div class="img-cards">
+                                <img src="images/thumb2.png" alt="Jogo da Velha">
+                            </div> <!--Img-Card-->
+                            <div class="txt-card">
+                                <h4>Campo Minado</h4>
+                                <a href="#" class="btn">Jogar Agora</a>
+                            </div> <!--Txt-Card-->
+                        </div> <!--Cards-->
+
+                        <div class="cards">
+                            <div class="img-cards">
+                                <img src="images/thumb3.png" alt="Jogo da Velha">
+                            </div> <!--Img-Card-->
+                            <div class="txt-card">
+                                <h4>Adivinhação</h4>
+                                <a href="#" class="btn">Jogar Agora</a>
+                            </div> <!--Txt-Card-->
+                        </div> <!--Cards-->
+                    </div> <!--Card-Jogos-->
+                </div> <!--Flex-->
+            </div> <!--Interface-->
+        </div> <!--Container-Main-Meio-->
+
+        <div class="container-main-final">
+            <div class="interface">
+                <div class="flex">
+                    <div class="txt-jogoDaVelha txt-geral">
+                        <div class="txt-historia">
+                            <h1>História Jogo da Velha</h1>
+                            <p>O jogo da velha, uma das formas mais antigas de entretenimento, remonta a milhares de anos. Embora suas origens exatas sejam incertas, registros sugerem sua existência desde o antigo Egito, Grécia ou Roma. A versão moderna evoluiu na Europa no século XIX e espalhou-se globalmente como um passatempo popular e educacional, valorizado por sua simplicidade e desafios estratégicos. Hoje, o jogo da velha continua sendo apreciado como uma forma de diversão simples e mentalmente estimulante em todo o mundo.</p>
+                        </div>
+
+                        <div class="txt-regras">
+                            <h1>Regras Jogo da Velha</h1>
+                            <p>Tabuleiro: O jogo é jogado em um tabuleiro de 3x3 quadrados.</p>
+                            <p>Jogadores: O jogo é jogado por dois jogadores, geralmente representados por "X" e "O".</p>
+                            <p>Objetivo: O objetivo de cada jogador é colocar três de suas marcas em linha reta (horizontal, vertical ou diagonal) no tabuleiro, ou seja, conquistar uma linha, coluna ou diagonal completa antes do oponente.</p>
+                            <p>Começando o jogo: Um jogador é escolhido aleatoriamente para começar. Geralmente, o jogador que joga com "X" começa o jogo.</p>
+                            <p>Turnos dos jogadores: Os jogadores alternam turnos, colocando suas marcas em um quadrado vazio do tabuleiro em cada turno.</p>
+                            <p>Colocando as marcas: Um jogador coloca sua marca em um quadrado vazio do tabuleiro em seu turno.</p>
+                            <p>Final do jogo: O jogo termina quando um dos jogadores conquista uma linha, coluna ou diagonal completa, ou quando todos os quadrados do tabuleiro são preenchidos. Se todas as casas forem preenchidas sem que nenhum jogador consiga completar uma linha, coluna ou diagonal, o jogo é considerado um empate.</p>
+                            <p>Declaração do vencedor: Se um jogador conseguir formar uma linha, coluna ou diagonal completa com suas marcas, ele é declarado vencedor. Se o jogo terminar em empate, nenhum jogador ganha.</p>
                         </div>
                     </div>
+
+                    <div class="txt-campoMinado txt-geral">
+                        <div class="txt-historia">
+                            <h1>História do Campo Minado</h1>
+                            <p>O Campo Minado começou como um jogo de tabuleiro e foi adaptado para computadores, estreando no Windows 3.1 em 1992. Originalmente, servia como uma ferramenta de treinamento militar para detectar minas terrestres. Desde então, tornou-se um clássico dos jogos de computador, desafiando os jogadores a evitar minas usando lógica e estratégia.</p>
+                        </div>
+
+                        <div class="txt-regras">
+                            <h1>Regras do Campo Minado</h1>
+                            <p>Objetivo: O objetivo é revelar todas as casas sem minas no tabuleiro, evitando acionar qualquer mina.</p>
+                            <p>Tabuleiro: O jogo é jogado em um tabuleiro retangular com casas que podem conter ou não minas.</p>
+                            <p>Início do Jogo: O jogador seleciona uma casa para revelar no início do jogo.</p>
+                            <p>Revelando Casas: As casas reveladas mostram um número, indicando quantas minas estão nas casas adjacentes.</p>
+                            <p>Marcando Minas: O jogador pode marcar as casas suspeitas de conterem minas com uma bandeira.</p>
+                            <p>Fim do Jogo: O jogo termina quando todas as casas sem minas são reveladas. Revelar uma mina encerra o jogo.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="txt-adivinhacao txt-geral">
+                        <div class="txt-historia">
+                            <h1>História da Adivinhação</h1>
+                            <p>O jogo de adivinhação é uma atividade antiga e simples, onde um jogador escolhe um número e os outros tentam adivinhá-lo, recebendo dicas sobre se o palpite é maior ou menor que o número escolhido. É um jogo de raciocínio e lógica que tem sido jogado por gerações em várias culturas ao redor do mundo.</p>
+                        </div>
+                        <div class="txt-regras">
+                            <h1>Regras da Adivinhação</h1>
+                            <p>Objetivo: O objetivo é adivinhar um número aleatório gerado pelo computador em até 10 tentativas.</p>
+                            <p>Início do Jogo: O jogador insere um número entre 1 e 100 para adivinhar o número gerado pelo computador.</p>
+                            <p>Feedback: O computador informa se o número inserido é maior, menor ou igual ao número gerado.</p>
+                            <p>Tentativas: O jogador tem até 10 tentativas para adivinhar o número correto.</p>
+                            <p>Fim do Jogo: O jogo termina quando o jogador adivinha o número correto ou excede o limite de tentativas.</p>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </div>
-
-
 
     </main>
 
