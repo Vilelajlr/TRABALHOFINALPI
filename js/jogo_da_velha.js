@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let player = 'X';
     let contO = 0;
     let contX = 0;
+    const btnReiniciar = document.getElementById('reiniciar')
     const pontosX = document.getElementById('pontosX');
     const pontosO = document.getElementById('pontosO');
     pontosX.textContent = 'PONTOS DO JOGADOR 1: ' + contX;
@@ -88,5 +89,17 @@ document.addEventListener('DOMContentLoaded', function() {
             init();
             return;
         }
+    }
+
+    btnReiniciar.addEventListener('click', reiniciarJogo);
+
+    function reiniciarJogo() {
+        const jogador = document.getElementById('winner');
+        jogador.textContent = '';
+        contX = 0;
+        contO = 0;
+        pontosX.textContent = 'PONTOS DO JOGADOR 1: ' + contX;
+        pontosO.textContent = 'PONTOS DO JOGADOR 2: ' + contO;
+        init();
     }
 });
