@@ -91,6 +91,7 @@ main .flex{
 .textos-main .textBox .btn:hover{
     background-color: var(--ColorBlack);
     color: var(--ColorWhite);
+    transform: scale(1.1);
 }
 
 .textos-main .img-box img{

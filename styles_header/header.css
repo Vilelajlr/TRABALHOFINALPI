@@ -19,8 +19,6 @@ header .flex{
 }
 
 /* Header */
-<<<<<<< HEAD
-=======
 header {
     position: fixed;
     top: 0;
@@ -67,4 +65,3 @@ header .logo a{
 header .logo a h1{
     font-size: 2rem;
 }
->>>>>>> ed9b090c11ddab3143955d033e49db5e613767a7
