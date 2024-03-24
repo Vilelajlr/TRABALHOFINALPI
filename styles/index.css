@@ -6,7 +6,13 @@
     --ColorTxt: #f1f1f1;
     --ColorBTNjogar: #00f08e;
     --ColorBlack: #000;
-    --ColorWhite: #fff;
+    --ColorWhite: #f1f1f1;
+    --background: #1b1010b2;
+    --background2: #8380809f;
+}
+
+body{
+    background-color: var(--background);
 }
 
 
@@ -17,6 +23,8 @@
     background-image: url(../images/backgound.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    box-shadow: 0 0 20px 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
 }
 
 .container-desfoque{
@@ -28,7 +36,7 @@
     backdrop-filter: blur(5px);
 
 }
-main .flex{
+.container-main-topo .flex{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,7 +85,7 @@ main .flex{
     color: var(--ColorTxt);
 }
 
-.textos-main .textBox .btn{
+.btn{
     background-color: var(--ColorBTNjogar);
     color: var(--ColorWhite);
     padding: 10px 20px;
@@ -88,7 +96,7 @@ main .flex{
     transition: 1s;
 }
 
-.textos-main .textBox .btn:hover{
+.btn:hover{
     background-color: var(--ColorBlack);
     color: var(--ColorWhite);
     transform: scale(1.1);
@@ -121,15 +129,104 @@ main .flex{
     max-width: 60px;
 }
 
-.sci ul {
-    position: absolute;
-    top: 50%;
-    right: 30px;
-    transform: translateY(-50%);
+/* container-main-meio */
+
+
+.container-main-meio .flex{
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 100px;
+}
+
+.container-main-meio .txt-Jogos h1{
+    font-size: 2rem;
+    font-weight: bolder;
+    margin: 10px 0;
+    color: var(--ColorTxt);
+
+}
+.container-main-meio .interface{
+    padding: 80px 4%;
+}
+
+.container-main-meio .card-jogos{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; 
+    width: 100%;
+    
+}
+
+.container-main-meio .card-jogos .cards{
+    text-align: center;
+    border: 1px solid var(--ColorBlack);
+    padding: 50px;
+    border-radius: 40px;
+    transition: 0.7s;
+}
+
+.container-main-meio .card-jogos .cards:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: none;
+}
+
+.container-main-meio .card-jogos .cards img{
+    width: 120px;
+}
+
+.container-main-meio .card-jogos .cards .img-cards{
+    margin: 30px 0;
+}
+
+.container-main-meio .card-jogos .cards .txt-card h4{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin: 10px 0;
+    color: var(--ColorTxt);
 }
 
 
+/* container-main-final */
+
+.container-main-final{
+    background-color: var(--background2);
+    box-shadow: 0 0 20px 30px rgba(0, 0, 0, 0.185);
+    box-shadow: inset 0 0 20px 30px rgba(0, 0, 0, 0.185);
+
+}
+
+.container-main-final .interface{
+    padding: 80px 4%;
+}
+
+.container-main-final .flex{
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 100px;
+
+}
+
+.container-main-final .txt-geral{
+    border: 2px solid var(--ColorBlack);
+    padding: 30px;
+    border-radius: 10px 30px 30px 30px;
+}
+
+.container-main-final .txt-geral h1{
+    font-size: 2rem;
+    font-weight: bolder;
+    margin: 30px 0;
+    color: var(--ColorTxt);
+    text-align: center;
+}
+
+.container-main-final .txt-geral p{
+    font-size: 1rem;
+    text-align: justify;
+    margin: 20px 0;
+    color: var(--ColorTxt);
+}
