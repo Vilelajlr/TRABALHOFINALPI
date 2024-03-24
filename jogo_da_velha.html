@@ -22,17 +22,17 @@
     <!--Fim Link Bootstrap-->
 
     <!--Link CSS-->
-    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/jogo_da_velha.css">
     <link rel="stylesheet" href="styles_header/header.css">
     <script src="styles_header/header.js"></script>
     <link rel="stylesheet" href="styles/estilogeral.css">
     <!--Fim Link CSS-->
 
     <!--Link JS-->
-    <script src="js/index.js"></script>
+    <script src="js/jogo_da_velha.js"></script>
     <!--Fim Link JS-->
 
-    <title>OnGames</title>
+    <title>Jogo da Velha</title>
 </head>
 
 <body>
@@ -62,17 +62,35 @@
         </div><!--Container-Header-->
     </header>
 
+    <main>
+        <div class="container-background">
+            <div class="container-desfoque">
+                <div class="interface">
+                    <div class="flex">
+                        <div class="vez-do-jogador">
+                            <h2 class="currentPlayer"></h2>
+                        </div><!-- vez-do-jogador -->
+                        <div class="jogo-da-velha">
+                            <div class="game">
+                                <button data-i="1"></button>
+                                <button data-i="2"></button>
+                                <button data-i="3"></button>
+                                <button data-i="4"></button>
+                                <button data-i="5"></button>
+                                <button data-i="6"></button>
+                                <button data-i="7"></button>
+                                <button data-i="8"></button>
+                                <button data-i="9"></button>
+                            </div><!-- game -->
+                        </div><!-- jogo-da-velha -->
+                        <div class="ganhou">
+                            <h3 id="winner"></h3>
+                        </div>
+                    </div><!-- flex -->
+                </div><!-- interface -->
+            </div><!-- container-desfoque -->
+        </div><!-- container-background -->
+    </main>
 
-
-
-
-
-    
-</head>
-
-<body>
-
-
-
-</body>
+</body> 
 </html>

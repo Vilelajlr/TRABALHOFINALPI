@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+main .flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-background{
+    height: 100vh;
+    background-image: url(backgound.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.container-desfoque{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(0.5px);
+    display: grid;
+    justify-items: center;
+}
+
+.vez-do-jogador, .ganhou{
+    z-index: 1;
+    margin: 30px;
+}
+
+main .interface{
+    padding: 80px 4%;
+    display: flex;
+}
+
+section .jogo-da-velha{
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3{
+    text-align: center;
+    color: #f1f1f1;
+}
+
+hr{
+    font-weight: bold;
+    height: 3px;
+    background: f1f1f1;
+    margin-bottom: 10px;
+}
+
+.game{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+}
+
+.game button{
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 50px;
+    background: white;
+}
