@@ -28,9 +28,7 @@
     <link rel="stylesheet" href="styles/estilogeral.css">
     <!--Fim Link CSS-->
 
-    <!--Link JS-->
-    <script src="js/index.js"></script>
-    <!--Fim Link JS-->
+    
 
     <title>OnGames</title>
 </head>
@@ -43,17 +41,17 @@
                 <div class="flex">
                     <div class="logo">
                         <a href="index.html">
-                            <img src="images/logo.png" alt="Logo">
+                            <h1>OnGames.com</h1>
                         </a> 
                     </div> <!--Logo-->
-                    <button class="menu-toggle"><i class="bi bi-list"></i></button>
+                    
                     <div class="menu-desktop">
                         <nav class="menu">
                             <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="games.html">Games</a></li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="index.html">Início</a></li>
+                                <li><a href="games.html">Jogos</a></li>
+                                <li><a href="about.html">Como Jogar</a></li>
+                                <li><a href="contact.html">Entre em Contato</a></li>
                             </ul>
                         </nav>
                     </div> <!--Menu-Desktop-->
@@ -61,12 +59,76 @@
             </div> <!--Interface-->
         </div><!--Container-Header-->
     </header>
+    
+    <main>
+        <div class="container-main">
+            <div class="container-desfoque">
+                <div class="interface">
+                    <div class="flex">
+                        <div class="textos-main">
+                            <div class="textBox" id="jogaDaVelha">
+                                <div class="titulo">
+                                    <h1>Jogo da Velha</h1>
+                                    <p>É um jogo de regras extremamente simples, que não traz grandes dificuldades para seus jogadores e é facilmente aprendido. O jogo é jogado em um tabuleiro de dimensões 3x3, onde dois jogadores disputam para completar uma linha com suas respectivas peças. O jogador que conseguir completar uma linha primeiro, vence a partida.</p>                                
+                                    <a href="jogoDaVelha.html" class="btn">Jogar</a>
+                                </div>
+                            </div> <!--TextBox-->
+
+                            <div class="textBox campoMinado">
+                                <div class="titulo">
+                                    <h1>Campo Minado</h1>
+                                    <p>É um jogo de tabuleiro composto por casas, onde o jogador deve descobrir onde estão as minas sem acioná-las. O jogo é jogado em um tabuleiro de dimensões 10x10, onde o jogador deve clicar nas casas para descobrir onde estão as minas. O jogador que conseguir descobrir todas as minas, vence a partida.</p>
+                                    <a href="campoMinado.html" class="btn">Jogar</a>
+                                </div>
+                            </div> <!--TextBox-->
+
+                            <div class="textBox adivinhacao">
+                                <div class="titulo">
+                                    <h1>Adivinhação</h1>
+                                    <p>É um jogo de adivinhação de números, onde o jogador deve adivinhar um número aleatório gerado pelo computador. O jogador deve adivinhar o número correto em até 10 tentativas. O jogador que conseguir adivinhar o número correto, vence a partida.</p>
+                                    <a href="adivinhacao.html" class="btn">Jogar</a>
+                                </div>
+                            </div> <!--TextBox-->
+
+                            <div class="img-box">
+                                <img src="images/img1.png" alt="jogos" class="jogos">
+                            </div> <!--Img-Box-->
+
+                        </div> <!--Textos-Main-->
+                        <div class="thumb">
+                            <ul>
+                                <li><img src="images/thumb1.png" onclick="imgSlider('images/img1.png')"></li>
+                                <li><img src="images/thumb2.png" onclick="imgSlider('images/img2.png')"></li>
+                                <li><img src="images/thumb3.png" onclick="imgSlider('images/img3.png')"></li>
+                            </ul>
+                        </div> <!--Thumb-->
+
+                        <div class="sci">
+                            <ul>
+                                <li><a href="#"><img src="images/facebook.png"></a></li>
+                                <li><a href="#"><img src="images/twitter.png"></a></li>
+                                <li><a href="#"><img src="images/instagram.png"></a></li>
+                            </ul>
+                        </div> <!--Sci-->
+
+                    </div> <!--Flex-->
+                </div> <!--Interface-->
+            </div> <!--Container-Desfoque-->
+        </div><!--Container-main-->
+    </main>
+
+
+    <!--Link JS-->
+    <script src="js/index.js"></script>
+    <!--Fim Link JS-->
+    
+
+<<<<<<< HEAD
 
 
 
-
-
-
+=======
+>>>>>>> ed9b090c11ddab3143955d033e49db5e613767a7
     
 </head>
 

@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+:root{
+    --MenuColor: #f1f1f1;
+    --MenuColorHover: #ababab;
+    --ColorTxt: #f1f1f1;
+    --ColorBTNjogar: #00f08e;
+    --ColorBlack: #000;
+    --ColorWhite: #fff;
+}
+
+
+/* Main*/
+.container-main{
+    position: relative;
+    height: 100vh;
+    background-image: url(../images/backgound.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container-desfoque{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+
+}
+main .flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.campoMinado{
+    display: none;
+}
+
+.adivinhacao{
+    display: none;
+}
+
+.textos-main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 250px;
+}
+
+.textos-main .textBox{
+    width: 40%;
+
+}
+
+.textos-main .textBox h1{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin: 10px 0;
+    color: var(--ColorTxt);
+   
+}
+
+.textos-main .textBox .titulo{
+    background-color: #00000063;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.textos-main .textBox p{
+    font-size: 1rem;
+    text-align: justify;
+    margin: 20px 0;
+    color: var(--ColorTxt);
+}
+
+.textos-main .textBox .btn{
+    background-color: var(--ColorBTNjogar);
+    color: var(--ColorWhite);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.textos-main .textBox .btn:hover{
+    background-color: var(--ColorBlack);
+    color: var(--ColorWhite);
+}
+
+.textos-main .img-box img{
+    width: 400px;
+}
+
+.thumb ul{
+    position: absolute;
+    display: flex;
+    bottom: 20px;
+    transform: translateX(-50%);
+}
+
+.thumb ul li{
+    list-style: none;
+    display: inline-block;
+    margin:0 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.thumb ul li:hover {
+    transform: translateY(-15px);
+}
+
+.thumb ul li img {
+    max-width: 60px;
+}
+
+.sci ul {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
