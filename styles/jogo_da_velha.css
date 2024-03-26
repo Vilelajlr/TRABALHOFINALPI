@@ -176,3 +176,10 @@ main h2{
     color: var(--MenuColorHover);
     text-decoration: underline;
 }
+
+.container-footer p{
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 12px;
+}
