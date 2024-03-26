@@ -63,6 +63,25 @@
     align-items: center;
     justify-content: center;
     height: calc(100vh - 70vh);
+    flex-direction: column;
+    gap: 5px;
+}
+
+.container-main-inicio .btn-play-game .dificuldade label{
+    color: var(--ColorWhite);
+    font-size: 1rem;
+    text-shadow: #000 1px 1px 1px;
+}
+
+.container-main-inicio .btn-play-game .dificuldade #dificuldade{
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    color: var(--ColorWhite);
+    background-color: #00000063;
 }
 
 .btn-play-game button{
@@ -141,6 +160,7 @@
     font-size: 0.7rem;
 }
 
+
 .container-jogo-aparecer .botoes-jogadas button{
     background-color: var(--ColorBTNjogar);
     color: var(--ColorWhite);
@@ -151,6 +171,7 @@
     cursor: pointer;
     transition: 0.3s;
     transition: 1s;
+  
 }
 
 .container-jogo-aparecer .botoes-jogadas button:hover{
