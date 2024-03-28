@@ -238,7 +238,7 @@ body{
 }
 
 .container-footer .interface{
-    padding: 80px 4%;
+    padding: 50px 4%;
 }
 .container-footer .flex{
     display: flex;
@@ -258,6 +258,14 @@ body{
     font-size: 1rem;
     font-weight: 700;
     margin: 30px 0;
+}
+
+.container-footer .footerInformacoes img{
+    transition: 0.6s;
+}
+
+.container-footer .footerInformacoes img:hover{
+    transform: scale(1.1);
 }
 
 .container-footer .footerInformacoes ul{
