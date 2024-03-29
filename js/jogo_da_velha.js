@@ -25,11 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function init(){
         selected = [];
 
-        if(player === 'X'){
-            currentPlayer.innerHTML = 'VEZ DO JOGADOR: 1';
-        }else{
-            currentPlayer.innerHTML = 'VEZ DO JOGADOR: 2';
-        }
+        vezJogador(player);
 
         document.querySelectorAll('.game button').forEach((item) => {
             item.innerHTML = '';
@@ -51,12 +47,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
         player = player === 'X' ? 'O' : 'X';
 
-        if(player === 'X'){
+        vezJogador(player);
+    }
+
+    function vezJogador(jogador){
+        if(jogador === 'X'){
             currentPlayer.innerHTML = 'VEZ DO JOGADOR: 1';
         }else{
             currentPlayer.innerHTML = 'VEZ DO JOGADOR: 2';
         }
     }
+
 
     function check(){
 
