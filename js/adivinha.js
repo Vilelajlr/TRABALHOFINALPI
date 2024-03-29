@@ -28,7 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
    function verificarPalpite(inputPalpite, selecioneDificuldade) {
     if (inputPalpite == numero && contador > 0 && contador <= getLimiteJogadas(selecioneDificuldade)) {
-        resultado.textContent = 'Parabéns você acertou o número!';
+        resultado.textContent = 'Parabéns você acertou o número! ' + numero;
+        botaoPalpite.disabled = true;
     } else if (inputPalpite < numero && contador > 0 && contador <= getLimiteJogadas(selecioneDificuldade)) {
         resultado.textContent = 'O número é maior que ' + inputPalpite;
     } else if (inputPalpite > numero && contador > 0 && contador <= getLimiteJogadas(selecioneDificuldade)) {
@@ -81,7 +82,7 @@ function verificarAcerto() {
         contador = 0;
         contadorH3.textContent = 'Contador de Jogadas: ' + contador;
         resultado.textContent = 'Para iniciar digite um número e clique em palpites';
-        
+        document.getElementById('palpites').value = '';
         botaoPalpite.disabled = false;
         
     }
