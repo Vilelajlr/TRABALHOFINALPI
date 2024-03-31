@@ -55,6 +55,7 @@
     text-align: center;
     font-weight: bold;
     text-decoration: underline;
+    color: var(--ColorTxt);
 }
 
 .txt p{
@@ -62,6 +63,38 @@
     padding: 0 1rem 1rem 1rem;
     text-align: center;
     font-weight: bold;
+    color: var(--ColorTxt);
+}
+
+.txt h3{
+    font-size: 1rem;
+    padding: 0 1rem 1rem 1rem;
+    text-align: center;
+    font-weight: bold;
+    color: var(--ColorTxt);
+
+}
+
+.btn-reiniciar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+#reiniciar{
+    background-color: var(--ColorBTNjogar);
+    color: var(--ColorTxt);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.8s;
+
+}
+
+#reiniciar:hover{
+    background-color: var(--ColorBlack);
 }
 
 /* Footer */

@@ -1,10 +1,13 @@
+
+const btnReiniciar = document.getElementById('reiniciar');
 const canvas = document.getElementById('jogo');
 const ctx = canvas.getContext('2d');
-
+let fimJogo = document.getElementById('fim');
 var tiles = [];
 const nTilesx = 10;
 const nTilesy = 10;
 const nBombs = 20;
+let gameover = false;
 
 class Tile {
     constructor(i, j){
@@ -99,10 +102,29 @@ function drawTile(tile){
 
 function openTile(tile){
     tile.isOpen = true;
+    if(gameover) return;
+    if(tile.isBomb) {
+        // Se o tile clicado for uma bomba, revela todas as bombas e encerra o jogo
+        revealBombs();
+        draw();
+        gameover = true;
+        fimJogo.textContent = 'Você encontrou uma bomba! Fim de jogo!';
+        return;
+    }
     if(!tile.openedAround && tile.bombAround == 0){
         openAround(tile);
     }
 }
+
+function revealBombs() {
+    tiles.forEach(tile => {
+        if(tile.isBomb) {
+            tile.isOpen = true;
+        }
+    });
+}
+
+
 
 function openAround(tile){
     tile.openedAround = true;
@@ -123,6 +145,7 @@ generateNBombs();
 draw();
 
 document.addEventListener('click', e => {
+    if(gameover) return;
     const rect = canvas.getBoundingClientRect();
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
@@ -138,6 +161,7 @@ document.addEventListener('click', e => {
 
 
 document.addEventListener("contextmenu", e => {
+    if(gameover) return;
     e.preventDefault();
     const rect = canvas.getBoundingClientRect();
     const mouseX = e.clientX - rect.left;
@@ -150,3 +174,17 @@ document.addEventListener("contextmenu", e => {
     tile.marked = !tile.marked;
     draw();
 });
+
+
+
+btnReiniciar.addEventListener('click', restart);
+
+function restart(){
+    fimJogo.textContent = '';
+    tiles = [];
+    gameover = false;
+    generateTile();
+    generateBombs();
+    generateNBombs();
+    draw();
+}
