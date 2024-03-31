@@ -58,7 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-
     function check(){
 
         let playerLastMove = player === 'X' ? 'O' : 'X';

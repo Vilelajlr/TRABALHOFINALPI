@@ -11,10 +11,24 @@
     --background2: #8380809f;
 }
 
+.light-mode{
+    --MenuColor: #0c0c0c;
+    --MenuColorHover: #5df0da;
+    --ColorTxt: #000000;
+    --ColorBTNjogar: #076942;
+    --ColorBlack: #ffffff;
+    --ColorWhite: #000000;
+    --background: #d2d2d2b2;
+    --background2: #fefbfb9f;
+
+    header{
+        background-color: #f1f1f1;
+    }
+}
+
 body{
     background-color: var(--background);
 }
-
 
 /* Main*/
 
@@ -36,6 +50,7 @@ body{
     height: 100%;
     backdrop-filter: blur(5px);
 }
+
 .container-main-topo .flex{
     display: flex;
     flex-direction: column;
