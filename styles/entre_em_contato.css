@@ -299,3 +299,79 @@ main .interface {
   width: 30px;
   margin: 10px;
 }
+
+/* Footer */
+
+.container-footer{
+  background-color: var(--background);
+}
+
+.container-footer .interface{
+  padding: 50px 4%;
+}
+.container-footer .flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container-footer .footerLogo a{
+  text-decoration: none;
+  color: var(--ColorTxt);
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.container-footer .footerInformacoes h3{
+  color: var(--ColorTxt);
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 30px 0;
+}
+
+.container-footer .footerInformacoes i:hover{
+  transform: scale(1.1);
+}
+
+.container-footer .footerInformacoes ul{
+  display: flex;
+  gap: 50px;
+}
+
+.container-footer .footerInformacoes ul li a img{
+  width: 30px;
+}
+
+.container-footer .colaboradores h3{
+  color: var(--ColorTxt);
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.container-footer .colaboradores a{
+  text-decoration: none;
+  color: var(--ColorTxt);
+  font-size: 0.8rem;
+  font-weight: 300;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: 0.8s;
+}
+
+.container-footer .colaboradores a:hover{
+  color: var(--MenuColorHover);
+  text-decoration: underline;
+}
+
+.container-footer p{
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 12px;
+}
+
+.footerInformacoes i{
+  font-size: 1.7rem;
+  color: black;
+}
