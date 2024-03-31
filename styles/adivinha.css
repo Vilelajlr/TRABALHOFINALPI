@@ -256,3 +256,8 @@
     padding: 1rem;
     font-size: 12px;
 }
+
+.footerInformacoes i{
+    font-size: 1.7rem;
+    color: black;
+}
