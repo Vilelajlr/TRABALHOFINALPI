@@ -248,76 +248,40 @@ body{
 
 /* Footer */
 
-.container-footer{
-    background-color: var(--background);
-}
 
-.container-footer .interface{
-    padding: 50px 4%;
-}
-.container-footer .flex{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
-.container-footer .footerLogo a{
-    text-decoration: none;
-    color: var(--ColorTxt);
-    font-size: 2rem;
-    font-weight: bolder;
-}
 
-.container-footer .footerInformacoes h3{
-    color: var(--ColorTxt);
-    font-size: 1rem;
-    font-weight: 700;
-    margin: 30px 0;
-}
 
-.container-footer .footerInformacoes i:hover{
-    transform: scale(1.1);
-}
+/* Estilo Responsivo */
 
-.container-footer .footerInformacoes ul{
-    display: flex;
-    gap: 50px;
-}
+@media (max-width: 1024px){
+    .container-main-topo .img-box{
+        display: none;
+    }
+    .container-main-topo .textos-main{
+        justify-content: center;
+        
+    }
 
-.container-footer .footerInformacoes ul li a img{
-    width: 30px;
-}
+    .textos-main .textBox{
+        position: absolute;
+        width: 350px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
-.container-footer .colaboradores h3{
-    color: var(--ColorTxt);
-    font-size: 1rem;
-    font-weight: 700;
-    margin: 10px 0;
-}
+    .container-main-meio .interface{
+        padding: 80px 8%;
+    }
 
-.container-footer .colaboradores a{
-    text-decoration: none;
-    color: var(--ColorTxt);
-    font-size: 0.8rem;
-    font-weight: 300;
-    margin: 10px 0;
-    cursor: pointer;
-    transition: 0.8s;
-}
+    .container-main-meio .card-jogos{
+        flex-direction: column;
+        gap: 30px;
+    }
 
-.container-footer .colaboradores a:hover{
-    color: var(--MenuColorHover);
-    text-decoration: underline;
-}
+    .container-main-meio .txt-Jogos{
+        text-align: center;
+    }
 
-.container-footer p{
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    font-size: 12px;
-}
-
-.footerInformacoes i{
-    font-size: 1.7rem;
-    color: black;
 }

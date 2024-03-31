@@ -1,12 +1,12 @@
-
 const btnReiniciar = document.getElementById('reiniciar');
 const canvas = document.getElementById('jogo');
 const ctx = canvas.getContext('2d');
 let fimJogo = document.getElementById('fim');
 var tiles = [];
-const nTilesx = 10;
-const nTilesy = 10;
-const nBombs = 20;
+const tamanhoCampo = 350;
+const nTilesx = 7;
+const nTilesy = 7;
+const nBombs = 10;
 let gameover = false;
 
 class Tile {
@@ -48,7 +48,7 @@ function calculateNBombsAround(tile){
     let bombCounter = 0;
     for(let i = tile.i - 1; i <= tile.i + 1; i++){
         for(let j = tile.j - 1; j <= tile.j + 1; j++){
-            if(i != tile.i || j != tile.j){
+            if(i !== tile.i || j !== tile.j){
                 if(getTile(i , j)?.isBomb){
                     bombCounter += 1;
                 }
@@ -60,13 +60,13 @@ function calculateNBombsAround(tile){
 }
 
 function getTile(i, j) {
-    return tiles.find(t => t.i == i && t.j == j);
+    return tiles.find(t => t.i === i && t.j === j);
 }
 
 generateTile();
 
 function draw(){
-    ctx.clearRect(0, 0, 511, 511);
+    ctx.clearRect(0, 0, tamanhoCampo, tamanhoCampo);
     tiles.map(t => {
         drawTile(t);
        
@@ -74,20 +74,20 @@ function draw(){
 }
 
 function drawTile(tile){
-    let x = (tile.i * 51) + 1;
-    let y = (tile.j * 51) + 1;
+    let x = (tile.i * (tamanhoCampo / nTilesx)) + 1;
+    let y = (tile.j * (tamanhoCampo / nTilesy)) + 1;
     if(tile.isOpen){
         if(tile.isBomb){
             ctx.fillStyle = "#ff0000";
-            ctx.fillRect(x, y, 50, 50);
+            ctx.fillRect(x, y, tamanhoCampo / nTilesx - 2, tamanhoCampo / nTilesy - 2);
         } else {
         ctx.fillStyle = "#999999";
-        ctx.fillRect(x, y, 50, 50);
+        ctx.fillRect(x, y, tamanhoCampo / nTilesx - 2, tamanhoCampo / nTilesy - 2);
         if(tile.bombAround){
-            ctx.font = "30px Arial";
+            ctx.font = "20px Arial";
             ctx.textAlign = "center";
             ctx.fillStyle = "red";
-            ctx.fillText(tile.bombAround, x + 25, y + 38);
+            ctx.fillText(tile.bombAround, x + (tamanhoCampo / nTilesx) / 2, y + (tamanhoCampo / nTilesy) / 2 + 8);
         }
         }
     } else {
@@ -96,7 +96,7 @@ function drawTile(tile){
         }else{
             ctx.fillStyle = "#aaaaaa";
         }
-        ctx.fillRect(x, y, 50, 50);
+        ctx.fillRect(x, y, tamanhoCampo / nTilesx - 2, tamanhoCampo / nTilesy - 2);
     }
 }
 
@@ -124,13 +124,11 @@ function revealBombs() {
     });
 }
 
-
-
 function openAround(tile){
     tile.openedAround = true;
     for(let i = tile.i - 1; i <= tile.i + 1; i++){
         for(let j = tile.j - 1; j <= tile.j + 1; j++){
-            if(i != tile.i || j != tile.j){
+            if(i !== tile.i || j !== tile.j){
                 const currentTile = getTile(i, j);
                 if(currentTile && !currentTile?.isBomb){
                     openTile(currentTile);
@@ -144,38 +142,34 @@ generateBombs();
 generateNBombs();
 draw();
 
-document.addEventListener('click', e => {
+canvas.addEventListener('click', e => {
     if(gameover) return;
     const rect = canvas.getBoundingClientRect();
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
     
-    const i = Math.floor((mouseX / 511) *10);
-    const j = Math.floor((mouseY / 511) *10);
+    const i = Math.floor((mouseX / tamanhoCampo) * nTilesx);
+    const j = Math.floor((mouseY / tamanhoCampo) * nTilesy);
 
     let tile = getTile(i, j);
     openTile(tile);
     draw();
-    
 });
 
-
-document.addEventListener("contextmenu", e => {
+canvas.addEventListener("contextmenu", e => {
     if(gameover) return;
     e.preventDefault();
     const rect = canvas.getBoundingClientRect();
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
     
-    const i = Math.floor((mouseX / 511) *10);
-    const j = Math.floor((mouseY / 511) *10);
+    const i = Math.floor((mouseX / tamanhoCampo) * nTilesx);
+    const j = Math.floor((mouseY / tamanhoCampo) * nTilesy);
 
     let tile = getTile(i, j);
     tile.marked = !tile.marked;
     draw();
 });
-
-
 
 btnReiniciar.addEventListener('click', restart);
 
