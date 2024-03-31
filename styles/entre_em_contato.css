@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+
+
 :root{
     --MenuColor: #f1f1f1;
     --MenuColorHover: #ababab;
@@ -252,13 +254,25 @@
 
   /* Estilo Página */
 
+  
 
-  main .container{
+
+  .container-main{
+    position: relative;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    background-image: url(../images/backgound.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container-desfoque{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+}
 
 
 
@@ -267,6 +281,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: 82vh;
   }
 
 main .interface{
@@ -291,3 +306,5 @@ main .interface{
     width: 30px;
     margin: 10px;
 }
+
+
