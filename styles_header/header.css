@@ -148,6 +148,7 @@ header .menu-desktop .menu ul li a.active::after {
         
     }
     
+    
     .menu-aberto .menu {
         display: block;
         height: 100vh;
