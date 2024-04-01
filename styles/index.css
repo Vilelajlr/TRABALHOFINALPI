@@ -143,6 +143,23 @@ body{
     max-width: 60px;
 }
 
+.imagens{
+    margin: 2rem;
+    text-align: center;
+}
+
+.imagens img{
+    width: 450px;
+}
+
+#img1{
+    border-radius: 20px 0 0 20px;
+}
+
+#img2{
+    border-radius: 0 20px 20px 0;
+}
+
 /* container-main-meio */
 
 
@@ -245,13 +262,6 @@ body{
     color: var(--ColorTxt);
 }
 
-
-/* Footer */
-
-
-
-
-
 /* Estilo Responsivo */
 
 @media (max-width: 1024px){
@@ -282,6 +292,10 @@ body{
 
     .container-main-meio .txt-Jogos{
         text-align: center;
+    }
+
+    .imagens img{
+        width: 90px;
     }
 
 }
