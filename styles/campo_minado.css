@@ -103,7 +103,10 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    
+}
+
+canvas{
+    background-color: #000;
 }
 
 
