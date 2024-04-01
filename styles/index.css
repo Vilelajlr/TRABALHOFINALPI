@@ -294,6 +294,10 @@ body{
         text-align: center;
     }
 
+    .imagens{
+        margin: 0;
+    }
+    
     .imagens img{
         width: 90px;
     }
