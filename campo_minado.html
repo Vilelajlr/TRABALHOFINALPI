@@ -35,6 +35,7 @@
     <!--Fim Link Bootstrap-->
 
     <!--Link CSS-->
+    <link rel="stylesheet" href="styles_header/footer.css">
     <link rel="stylesheet" href="styles/campo_minado.css">
     <link rel="stylesheet" href="styles_header/header.css">
     <script src="styles_header/header.js"></script>
@@ -57,8 +58,18 @@
                             <h1>OnGames.com</h1>
                         </a>
                     </div> <!--Logo-->
-
+    
                     <div class="menu-desktop">
+                        <button class="btn-menu">
+                            <span class="icon">
+                                <svg viewBox="0 0 175 80" width="40" height="40">
+                                    <rect width="80" height="15" fill="#f0f0f0" rx="10"></rect>
+                                    <rect y="30" width="80" height="15" fill="#f0f0f0" rx="10"></rect>
+                                    <rect y="60" width="80" height="15" fill="#f0f0f0" rx="10"></rect>
+                                </svg>
+                            </span>
+                            <span class="text">MENU</span>
+                        </button>
                         <nav class="menu">
                             <ul>
                                 <li><a href="index.html#inicio">Início</a></li>
@@ -84,7 +95,9 @@
                                 <p>Tome cuidado com as bombas! 💣💥</p>
                                 <h3 id="fim"></h1>
                             </div>
-                            <canvas id="jogo" width="511" height="511"></canvas>
+                            <div class="container-canvas">
+                                <canvas id="jogo" width="350" height="350"></canvas>
+                            </div>
                             <div class="btn-reiniciar">
                                 <button id="reiniciar">Reiniciar</button>
                             </div>

@@ -29,6 +29,18 @@
                 }
             });
         }
+
+        
+            const btnMenu = document.querySelector('.btn-menu');
+            const menuDesktop = document.querySelector('.menu-desktop');
+        
+            btnMenu.addEventListener('click', function () {
+                menuDesktop.classList.toggle('menu-aberto');
+            });
+        
+        
+
+
     
         // Adiciona um listener de evento de rolagem
         window.addEventListener('scroll', highlightCurrentLink);

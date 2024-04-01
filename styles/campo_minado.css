@@ -90,6 +90,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: 0.8s;
+   
 
 }
 
@@ -97,87 +98,26 @@
     background-color: var(--ColorBlack);
 }
 
-/* Footer */
-
-.container-footer{
-    background-color: var(--background);
-}
-
-.container-footer .interface{
-    padding: 50px 4%;
-}
-.container-footer .flex{
+.container-canvas{
     display: flex;
+    width: 100%;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-}
-
-.container-footer .footerLogo a{
-    text-decoration: none;
-    color: var(--ColorTxt);
-    font-size: 2rem;
-    font-weight: bolder;
-}
-
-.container-footer .footerInformacoes h3{
-    color: var(--ColorTxt);
-    font-size: 1rem;
-    font-weight: 700;
-    margin: 30px 0;
-}
-
-.container-footer .footerInformacoes img{
-    transition: 0.6s;
-}
-
-.container-footer .footerInformacoes img:hover{
-    transform: scale(1.1);
-}
-
-.container-footer .footerInformacoes ul{
-    display: flex;
-    gap: 50px;
-}
-
-.container-footer .footerInformacoes ul li a img{
-    width: 30px;
-}
-
-#facebook{
-    width: 15px;
-}
-
-.container-footer .colaboradores h3{
-    color: var(--ColorTxt);
-    font-size: 1rem;
-    font-weight: 700;
-    margin: 10px 0;
     
 }
 
-.container-footer .colaboradores a{
-    text-decoration: none;
-    color: var(--ColorTxt);
-    font-size: 0.8rem;
-    font-weight: 300;
-    margin: 10px 0;
-    cursor: pointer;
-    transition: 0.8s;
+
+
+@media (max-width: 1024px){
+    .container-main-topo{
+        height: 110vh;
+    }
+
+    .container-main-topo .interface{
+        padding: 80px 8%;
+    }
+
+    
+
 }
 
-.container-footer .colaboradores a:hover{
-    color: var(--MenuColorHover);
-    text-decoration: underline;
-}
-
-.container-footer p{
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    font-size: 12px;
-}
-
-.footerInformacoes i{
-    font-size: 1.7rem;
-    color: black;
-}

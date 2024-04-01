@@ -112,87 +112,48 @@ main h2{
     transform: scale(1.1);
 }
 
-/* Footer */
+@media (max-width: 1024px){
+    .game button{
+        width: 80px;
+        height: 80px;
+        font-size: 40px;
+        margin: 2px;
+    }
 
-.container-footer{
-    background-color: var(--background);
-}
+    .container-background{
+        height: 110vh;
+    }
 
-.container-footer .interface{
-    padding: 50px 4%;
-}
-.container-footer .flex{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+    .vez-do-jogador h2{
+        font-size: 1rem;
+        text-shadow: 1px 1px black;
+    }
 
-.container-footer .footerLogo a{
-    text-decoration: none;
-    color: var(--ColorTxt);
-    font-size: 2rem;
-    font-weight: bolder;
-}
+    .container-background .flex{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
 
-.container-footer .footerInformacoes h3{
-    color: var(--ColorTxt);
-    font-size: 1rem;
-    font-weight: 700;
-    margin: 30px 0;
-}
+    .container-background .jogador .text{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 30px;
+    }
 
-.container-footer .footerInformacoes img{
-    transition: 0.6s;
-}
+    .container-background .jogador .text h2{
+        font-size: 1rem;
+        text-shadow: 1px 1px black;
+    }
 
-.container-footer .footerInformacoes img:hover{
-    transform: scale(1.1);
-}
+    .ganhou h2{
+        font-size: 1rem;
+        text-shadow: 1px 1px black;
+    }
+    .botao button{
+        padding: 0.5rem;
+    }
 
-.container-footer .footerInformacoes ul{
-    display: flex;
-    gap: 50px;
-}
-
-.container-footer .footerInformacoes ul li a img{
-    width: 30px;
-}
-
-#facebook{
-    width: 15px;
-}
-
-.container-footer .colaboradores h3{
-    color: var(--ColorTxt);
-    font-size: 1rem;
-    font-weight: 700;
-    margin: 10px 0;
-    
-}
-
-.container-footer .colaboradores a{
-    text-decoration: none;
-    color: var(--ColorTxt);
-    font-size: 0.8rem;
-    font-weight: 300;
-    margin: 10px 0;
-    cursor: pointer;
-    transition: 0.8s;
-}
-
-.container-footer .colaboradores a:hover{
-    color: var(--MenuColorHover);
-    text-decoration: underline;
-}
-
-.container-footer p{
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    font-size: 12px;
-}
-
-.footerInformacoes i{
-    font-size: 1.7rem;
-    color: black;
 }
