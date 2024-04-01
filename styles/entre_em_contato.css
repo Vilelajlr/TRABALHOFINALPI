@@ -11,6 +11,7 @@
   --ColorWhite: #f1f1f1;
   --background: #1b1010b2;
   --background2: #8380809f;
+  --color-red: #e63636;
 }
 
 
@@ -382,6 +383,13 @@ main .interface {
 .img-redes img {
   width: 30px;
   margin: 10px;
+}
+
+.span-required{
+  display: none;
+  color: var(--color-red);
+  font-size: 12px;
+  margin: 3px 0 0 1px;
 }
 
 

@@ -40,6 +40,7 @@
     <link rel="stylesheet" href="styles_header/header.css">
     <script src="styles_header/header.js"></script>
     <link rel="stylesheet" href="styles/estilogeral.css">
+    <script src="js/contato.js"></script>
     <!--Fim Link CSS-->
 
     <!-- Link Favicon -->
@@ -95,7 +96,7 @@
                     <div class="flex">
                         <div class="containerFormulario">
                             <div class="formulario">
-                                <form class="form">
+                                <form class="form" id="form">
                                     <div class="txt-contato">
                                         <h1>Suporte OnGames</h1>
                                         <p>Entre em contato conosco para tirar dúvidas, dar sugestões ou relatar
@@ -111,39 +112,52 @@
 
                                     <div class="flex-form">
                                         <label>
-                                            <input required="" placeholder="" type="text" class="input">
-                                            <span>Primeiro nome</span>
+                                            <input required="" type="text" class="input required">
+                                            <span class="spanColor">Primeiro nome</span>
                                         </label>
 
                                         <label>
-                                            <input required="" placeholder="" type="text" class="input">
-                                            <span>Último nome</span>
+                                            <input required="" placeholder="" type="text" class="input required">
+                                            <span class="spanColor">Último nome</span>
+                                            
                                         </label>
+
+                                        
                                     </div>
 
-                                    <label>
-                                        <input required="" placeholder="" type="email" class="input">
-                                        <span>email</span>
-                                    </label>
+                                    <span class="span-required">Nome ter no mínimo 3 caracteres</span>
+                                    <span class="span-required">Obrigatório um Sobrenome</span>
 
                                     <label>
-                                        <input required="" type="tel" placeholder="" class="input">
-                                        <span>Número de Contato</span>
+                                        <input required placeholder="" type="text" class="input required">
+                                        <span class="spanColor">email</span>
                                     </label>
+                                    
+                                    <span class="span-required">Digite um email válido</span>
+
+                                    <label>
+                                        <input required="" type="tel" placeholder="" class="input required">
+                                        <span class="spanColor">Número de Contato</span>
+                                    </label>
+
+                                    
+                                    <span class="span-required">Digite um telefone válido</span>
+                                    
+
                                     <label>
                                         <div class="txtContato">
                                             <span id="txtAjuda">Como podemos ajudar?</span>
                                         </div>
                                         <div class="radiosButtons">
-                                            <input type="radio" name="duvidas" id="duvidas">
+                                            <input type="radio" name="duvidas" id="duvidas" value="duvida" class="bo">
                                             <label for="duvidas">Dúvidas.</label>
                                         </div>
                                         <div class="radiosButtons">
-                                            <input type="radio" name="duvidas" id="sugestoes">
+                                            <input type="radio" name="duvidas" id="sugestoes" value="sugestao" class="bo">
                                             <label for="sugestoes">Sugestões.</label>
                                         </div>
                                         <div class="radiosButtons">
-                                            <input type="radio" name="duvidas" id="relatarProblemas">
+                                            <input type="radio" name="duvidas" id="relatarProblemas" value="relata" class="bo">
                                             <label for="relatarProblemas">Relatar Problemas.</label>
                                         </div>
                                     </label>

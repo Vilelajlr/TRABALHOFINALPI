@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const botaoReiniciar = document.querySelector('#gerar');
     const contadorH3 = document.getElementById('contador');
     const resultado = document.getElementById('jogadas');
-    const selecioneDificuldade = document.getElementById('dificuldade').value;
+    let dificuladeGame = '';
     let contador = 0;
     let ultimaJogada = 0;
     let numerosTentados = []; 
@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function getLimiteJogadas(dificuldade) {
+        console.log(dificuldade);
         switch (dificuldade) {
             case 'facil':
                 return 15;
@@ -51,9 +52,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function verificarAcerto() {
         const inputPalpite = parseInt(document.getElementById('palpites').value);
+        const selecioneDificuldade = document.querySelector('#dificuldade').value;
+        dificuladeGame = selecioneDificuldade;
 
         if (contador == 0) {
-            contador = getLimiteJogadas(selecioneDificuldade);
+            contador = getLimiteJogadas(dificuladeGame);
             contadorH3.textContent = 'Jogadas Restantes: ' + contador;
         }
 
@@ -79,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function reiniciar() {
         numero = Math.floor(Math.random() * 100) + 1;
-        contador = 0;
+        contador = dificuladeGame == '' ? 0 : getLimiteJogadas(dificuladeGame);
         contadorH3.textContent = 'Contador de Jogadas: ' + contador;
         resultado.textContent = 'Para iniciar digite um número e clique em palpites';
         document.getElementById('palpites').value = '';
