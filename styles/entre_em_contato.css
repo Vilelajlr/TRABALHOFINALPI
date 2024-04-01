@@ -220,12 +220,12 @@
 
 
 /* estilo checkbox */
- main .flex{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
+main .flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
 
 #termos {
