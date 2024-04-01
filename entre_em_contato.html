@@ -157,17 +157,17 @@
                                             <label for="sugestoes">Sugestões.</label>
                                         </div>
                                         <div class="radiosButtons">
-                                            <input type="radio" name="duvidas" id="relatarProblemas" value="relata" class="bo">
+                                            <input type="radio" name="duvidas" id="relatarProblemas" value="relata" class="bo" >
                                             <label for="relatarProblemas">Relatar Problemas.</label>
                                         </div>
                                     </label>
                                     <label>
-                                        <textarea required rows="3" placeholder="" class="input01"></textarea>
-                                        <span id="ctxMsg">message</span>
+                                        <textarea required rows="3" placeholder="" class="input01" maxlength="2000" cols="30"></textarea>
+                                        <span id="ctxMsg">Digite algo aqui...</span>
                                     </label>
                                     <label id="termos">
                                         <div class="inputTermos">
-                                            <input type="checkbox" id="1" class="checkbox" name="checks[]">
+                                            <input type="checkbox" id="1" class="checkbox" name="checks[]" required>
                                             <label for="1">Eu aceito os <a href="#" class="termosCondicoes">termos e
                                                     condições.</a></label>
                                         </div>
@@ -187,9 +187,9 @@
 
                                     </label>
 
-                                    <button class="fancy" href="#">
+                                    <button class="fancy" id="fancy">
                                         <span class="top-key"></span>
-                                        <span class="text">submit</span>
+                                        <span class="text">Enviar</span>
                                         <span class="bottom-key-1"></span>
                                         <span class="bottom-key-2"></span>
                                     </button>

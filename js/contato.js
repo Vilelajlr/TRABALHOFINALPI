@@ -84,19 +84,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // validação entre em contato
 
-        const opcao = documento.querySelectorAll('.bo');
-        const textarea = documento.querySelector('.input01');
-        const spanmsg = document.getElementById('ctxMsg');
+        $('.bo').click(function(){
+            var opcaoSelecionada = $(this).val();
+            var span = $('#ctxMsg');
 
-        
-        
-
-        function verificaRadio(value){
-            if(value === 'duvida'){
-                spanmsg.textContent = 'Dúvida';
+            if(opcaoSelecionada == 'duvida'){
+                span.text('Relate suas dúvidas aqui...');
+            }else if(opcaoSelecionada == 'sugestao'){
+                span.text('Relate suas sugestões aqui...');
+            }else if(opcaoSelecionada == 'relata'){
+                span.text('Relate seu problema aqui...');
             }
-        }
 
+
+        });
+
+
+        const btnValidar = document.getElementById('fancy');
 
 
 

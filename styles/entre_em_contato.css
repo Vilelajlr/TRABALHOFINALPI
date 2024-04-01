@@ -74,12 +74,11 @@
   font-weight: 600;
 }
 
-.form label .input:valid+span {
-  color: green;
-}
+
 
 .input01 {
   width: 100%;
+  height: 150px;
   padding: 10px 10px 20px 10px;
   outline: 0;
   border: 1px solid rgba(105, 105, 105, 0.397);
@@ -103,14 +102,12 @@
 
 .form label .input01:focus+span,
 .form label .input01:valid+span {
-  top: 50px;
+  top: 130px;
   font-size: 0.7em;
   font-weight: 600;
 }
 
-.form label .input01:valid+span {
-  color: green;
-}
+
 
 .fancy {
   background-color: transparent;
@@ -394,14 +391,15 @@ main .interface {
 
 
 
+
 @media (max-width: 1024px){
 
   .container-main {
-    height: 120vh;
+    height: 130vh;
   }
 
   .container-main .flex{
-    margin-top: 130px;
+    margin-top: 150px;
   }
 
 
