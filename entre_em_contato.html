@@ -96,7 +96,7 @@
                     <div class="flex">
                         <div class="containerFormulario">
                             <div class="formulario">
-                                <form class="form" id="form">
+                                <div class="form" id="form">
                                     <div class="txt-contato">
                                         <h1>Suporte OnGames</h1>
                                         <p>Entre em contato conosco para tirar dúvidas, dar sugestões ou relatar
@@ -162,7 +162,7 @@
                                         </div>
                                     </label>
                                     <label>
-                                        <textarea required rows="3" placeholder="" class="input01" maxlength="2000" cols="30"></textarea>
+                                        <textarea required rows="3" placeholder="" class="input01" maxlength="2000" id="mensagem" cols="30"></textarea>
                                         <span id="ctxMsg">Digite algo aqui...</span>
                                     </label>
                                     <label id="termos">
@@ -193,13 +193,47 @@
                                         <span class="bottom-key-1"></span>
                                         <span class="bottom-key-2"></span>
                                     </button>
-                                </form> <!--Form-->
+                                </div> <!--Form-->
                             </div> <!--Formulario-->
                         </div> <!--ContainerFormulario-->
+
+                        <div class="container-modal">
+                            <div id="fade" class="hide"></div>
+                            <div id="modal" class="hide">
+                                <form action="enviar.php" method="post">
+                                    <div class="modal-header">
+                                        <h3 class="titulo-modal">Dados Cadastrados</h3>
+                                            <div class="icones-modal">
+                                                <span class="editar">
+                                                    <i class="bi bi-pencil-square" title="Editar"></i>
+                                                </span>
+                                                <span class="fechar">
+                                                    <i class="bi bi-x-lg" title="Fechar"></i>
+                                                </span>
+                                            </div>
+                                        
+                                    </div> <!--Modal-Header-->
+                                    <div class="modal-body">
+                                        <p id="nomeCompleto"></p>
+                                        <p id="email"></p>
+                                        <p id="telefone"></p>
+                                        <p id="duvidas"></p>
+                                    </div> <!--Modal-Body-->
+                                    <div class="btn-modal">
+                                        <button class="limpar" type="reset">Limpar Campos</button>
+                                        <button type="submit" class="enviar">Enviar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+
                     </div> <!--Flex-->
                 </div> <!--Interface-->
             </div> <!--ContainerDesfoque-->
         </div> <!--Container-->
+
+
     </main>
 
 
