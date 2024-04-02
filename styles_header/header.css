@@ -7,6 +7,7 @@
     --ColorBTNjogar: #00f08e;
     --ColorBlack: #000;
     --ColorWhite: #fff;
+    --ColorPurple: #9333ff;
 }
 
 /* Gerais*/
@@ -72,13 +73,13 @@ header .menu-desktop .menu ul li a.active::after {
     display: block;
     width: 100%;
     height: 2px;
-    background-color: var(--ColorBTNjogar); /* Cor do traço */
+    background-color: var(--ColorPurple); /* Cor do traço */
     transition: width 0.3s ease; /* Adiciona uma transição suave na largura do traço */
 }
 
 #paginaAtual{
    
-   border-bottom: 2px solid var(--ColorBTNjogar);
+   border-bottom: 2px solid var(--ColorPurple);
 }
 
 
