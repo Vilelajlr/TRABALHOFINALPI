@@ -104,13 +104,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 const sobrenomeModal = campos[1].value;
                 const emailModal = campos[2].value;
                 const numeroContato = campos[3].value;
+                var texto = document.getElementById('mensagem');
+                var mensagem = texto.value;
                 document.getElementById('nomeCompleto').textContent = ("Nome:" + nomeModal + " " + sobrenomeModal);
                 document.getElementById('email').textContent = ("Email: " + emailModal);
                 document.getElementById('telefone').textContent = ("Número: " + numeroContato);
-                document.getElementById('duvidas').textContent = ("Mensagem: " + mensagem);
+                duvidas.textContent = ("Mensagem: " + mensagem);
             }
         } else {
-            // Marca os campos não verificados como inválidos
+            
             campos.forEach((field, index) => {
                 if (field.style.backgroundColor !== 'rgba(0, 255, 0, 0.1)') {
                     setError(index);
@@ -121,12 +123,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const limparCampos = () => {
         campos.forEach((field) => {
-            field.value = ''; // Limpa o valor do campo
-            field.style.border = ''; // Remove a borda
-            field.style.backgroundColor = ''; // Remove a cor de fundo
+            field.value = '';
+            field.style.border = ''; 
+            field.style.backgroundColor = ''; 
             const index = Array.from(campos).indexOf(field);
-            spansColor[index].style.color = ''; // Remove a cor do texto de feedback
-            spans[index].style.display = 'none'; // Esconde a mensagem de erro
+            spansColor[index].style.color = ''; 
+            spans[index].style.display = 'none';
         });
     };
 
@@ -135,8 +137,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     limparCamposBtn.addEventListener('click', () => {
-        toggleModal(); // Fecha o modal
-        limparCampos(); // Limpa os campos
+        toggleModal();
+        limparCampos();
     });
 
 });
