@@ -220,12 +220,6 @@
 
 
 /* estilo checkbox */
-main .flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
 
 
 #termos {
@@ -266,8 +260,9 @@ main .flex {
   position: relative;
   background-image: url(../images/backgound.jpg);
   background-repeat: no-repeat;
-  height: 120vh;
+  height: 100vh;
   background-size: cover;
+
 }
 
 .container-desfoque {
@@ -275,9 +270,8 @@ main .flex {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   backdrop-filter: blur(5px);
-  padding: 1;
 }
 
 
@@ -287,11 +281,12 @@ main .flex {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: 100vh;
  
 }
 
 main .interface {
-  padding: 80px 4%;
+  padding: 40px 4%;
 }
 
 .txt-contato {

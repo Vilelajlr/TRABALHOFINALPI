@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const spansColor = document.querySelectorAll('.spanColor');
     const emailRegex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i;
     const telRegex = /^\(?(?:\d{2})\)?[-. ]?(9\d{4}[-. ]?\d{4})$/;
-    ;
+    var texto = document.getElementById('mensagem');
+    
 
     campos[0].addEventListener('input', PnameValidate);
     campos[1].addEventListener('input', UnameValidate);
@@ -104,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const sobrenomeModal = campos[1].value;
                 const emailModal = campos[2].value;
                 const numeroContato = campos[3].value;
-                var texto = document.getElementById('mensagem');
+                
                 var mensagem = texto.value;
                 document.getElementById('nomeCompleto').textContent = ("Nome:" + nomeModal + " " + sobrenomeModal);
                 document.getElementById('email').textContent = ("Email: " + emailModal);

@@ -11,7 +11,10 @@
     --ColorPurple: #9333ff;
 }
 
+
+
 .container-footer{
+    
     background-color: var(--ColorDark2);
 }
 
