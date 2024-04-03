@@ -136,15 +136,19 @@ body{
 }
 
 .imagens img{
-    width: 400px;
+    width: 350px;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
 }
 
-#img1{
+.img1{
     border-radius: 20px 0 0 20px;
+    box-shadow: -2px -2px 5px #f1f1f1;
 }
 
-#img2{
+.img2{
     border-radius: 0 20px 20px 0;
+    box-shadow: 2px 2px 5px #f1f1f1;
 }
 
 /* container-main-meio */
