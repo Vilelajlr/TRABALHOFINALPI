@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     campos[0].addEventListener('input', PnameValidate);
     campos[1].addEventListener('input', UnameValidate);
     campos[2].addEventListener('input', emailValidate);
+    texto.addEventListener('input', mensagemValidade);
 
     campos[3].addEventListener('input', function () {
         let value = campos[3].value;
@@ -67,6 +68,14 @@ document.addEventListener('DOMContentLoaded', function () {
             setError(3);
         } else {
             setValidate(3);
+        }
+    }
+
+    function mensagemValidade(){
+        if(texto.value.length < 10){
+            setError(4);
+        } else {
+            setValidate(4);
         }
     }
 
