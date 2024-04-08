@@ -1,0 +1,174 @@
+@charset "UTF-8";
+
+:root{
+    --MenuColor: #f1f1f1;
+    --MenuColorHover: #ababab;
+    --ColorTxt: #f1f1f1;
+    --ColorBTNjogar: #00f08e;
+    --ColorBlack: #000;
+    --ColorWhite: #fff;
+    --ColorPurple: #9333ff;
+}
+
+/* Gerais*/
+
+
+header .flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    z-index: 999; /* Garante que o header esteja sempre acima do conteúdo */
+}
+
+/* Estilo do header quando estiver na parte superior da página */
+header.scroll {
+    background-color: rgba(0, 0, 0, 0.7); /* Cor de fundo com transparência */
+    transition: background-color 0.5s ease; /* Adiciona uma transição suave */
+}
+
+header .interface{
+    padding: 40px 4%;
+}
+
+header .menu-desktop .menu ul{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+header .menu-desktop .menu ul li a{
+    color: var(--MenuColor);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: 1s;
+    display: block;
+}
+
+header .menu-desktop .menu ul li a:hover{
+    color: var(--MenuColorHover);
+    transform: scale(1.1);
+}
+
+header .logo a{
+    text-decoration: none;
+    color:var(--MenuColor);
+}
+
+header .logo a h1{
+    font-size: 2rem;
+}
+
+
+header .menu-desktop .menu ul li a.active::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--ColorPurple); /* Cor do traço */
+    transition: width 0.3s ease; /* Adiciona uma transição suave na largura do traço */
+}
+
+#paginaAtual{
+   
+   border-bottom: 2px solid var(--ColorPurple);
+}
+
+
+
+
+/* estilo botao menu */
+
+.btn-menu {
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.5s ease-in-out;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    background: #040f16;
+    color: #f5f5f5;
+    display: none;
+  }
+  
+  .btn-menu:hover {
+    box-shadow: 0 0 20px 0px #2e2e2e3a;
+  }
+  
+  .btn-menu .icon {
+    position: absolute;
+    height: 40px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+  }
+  
+  .btn-menu .text {
+    transform: translateX(55px);
+  }
+  
+  .btn-menu:hover .icon {
+    width: 175px;
+  }
+  
+  .btn-menu:hover .text {
+    transition: all 0.5s;
+    opacity: 0;
+  }
+  
+  .btn-menu:focus {
+    outline: none;
+  }
+  
+  .btn-menu:active .icon {
+    transform: scale(0.85);
+  }
+
+@media (max-width: 1024px) {
+
+    header .logo a h1{
+        font-size: 1rem;
+    }
+
+    .menu {
+        display: none;
+        
+    }
+    
+    
+    .menu-aberto .menu {
+        display: block;
+        height: 100vh;
+        backdrop-filter: blur(2px);
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 1000;
+        padding-top: 50px;
+    }
+
+    .menu-aberto .menu ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btn-menu {
+        display: flex;
+    }
+}
+  

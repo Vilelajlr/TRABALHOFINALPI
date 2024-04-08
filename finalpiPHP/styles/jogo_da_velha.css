@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+:root{
+    --MenuColor: #f1f1f1;
+    --MenuColorHover: #ababab;
+    --ColorTxt: #f1f1f1;
+    --ColorBTNjogar: #00f08e;
+    --ColorBlack: #000;
+    --ColorWhite: #f1f1f1;
+    --background: #1b1010b2;
+    --background2: #8380809f;
+}
+
+main .flex{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-background{
+    height: 100vh;
+    background-image: url(../images/backgound.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.container-desfoque{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(1px);
+    display: grid;
+}
+
+.vez-do-jogador, .ganhou{
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+main .interface{
+    padding: 80px 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+h1{
+    text-align: center;
+    color: #f1f1f1;
+}
+
+main h2{
+    color: #f1f1f1;
+    font-size: 26px;
+    font-weight: bold;
+    text-shadow: 3px 3px black;
+    margin: 1rem 0;
+}
+
+.game{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.game button{
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 50px;
+    background: white;
+}
+
+.jogo-da-velha{
+    display: flex;
+}
+
+.botao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao button{
+    border-radius: 10px;
+    padding: 1rem;
+    font-weight: bold;
+    border: none;
+    transition: 0.6s;
+}
+
+.botao button:hover{
+    background-color: black;
+    color: white;
+    transform: scale(1.1);
+}
+
+@media (max-width: 1024px){
+    .game button{
+        width: 80px;
+        height: 80px;
+        font-size: 40px;
+        margin: 2px;
+    }
+
+    .container-background{
+        height: 110vh;
+    }
+
+    .vez-do-jogador h2{
+        font-size: 1rem;
+        text-shadow: 1px 1px black;
+    }
+
+    .container-background .flex{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .container-background .jogador .text{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 30px;
+    }
+
+    .container-background .jogador .text h2{
+        font-size: 1rem;
+        text-shadow: 1px 1px black;
+    }
+
+    .ganhou h2{
+        font-size: 1rem;
+        text-shadow: 1px 1px black;
+    }
+    .botao button{
+        padding: 0.5rem;
+    }
+
+}
