@@ -14,6 +14,9 @@
 
     <!--Link JQuery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <!--Fim Link JQuery-->
 
     <!--Link Bootstrap-->
@@ -31,10 +34,9 @@
 
     <!--Link CSS-->
     <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="styles_header/header.css">
     <link rel="stylesheet" href="styles_header/footer.css">
-    <script src="styles_header/header.js"></script>
     <link rel="stylesheet" href="styles/estilogeral.css">
+    <link rel="stylesheet" href="styles_header/header.css">
     <!--Fim Link CSS-->
     
 
@@ -44,43 +46,9 @@
 
 <body>
 
-    <header>
-        <div class="container-header">
-            <div class="interface">
-                <div class="flex">
-                    <div class="logo">
-                        <a href="index.html">
-                            <h1>OnGames.com</h1>
-                        </a>
-                    </div> <!--Logo-->
+    <?php include 'header.php'; ?>
+    <script src="styles_header/header.js"></script>
 
-                    <div class="menu-desktop">
-
-                        <button class="btn-menu">
-                            <span class="icon">
-                                <svg viewBox="0 0 175 80" width="40" height="40">
-                                    <rect width="80" height="15" fill="#f0f0f0" rx="10"></rect>
-                                    <rect y="30" width="80" height="15" fill="#f0f0f0" rx="10"></rect>
-                                    <rect y="60" width="80" height="15" fill="#f0f0f0" rx="10"></rect>
-                                </svg>
-                            </span>
-                            <span class="text">MENU</span>
-                        </button>
-
-
-                        <nav class="menu">
-                            <ul>
-                                <li><a href="#inicio">Início</a></li>
-                                <li><a href="#jogos">Jogos</a></li>
-                                <li><a href="#final">Como Jogar</a></li>
-                                <li><a href="entre_em_contato.html">Entre em Contato</a></li>
-                            </ul>
-                        </nav>
-                    </div> <!--Menu-Desktop-->
-                </div> <!--Flex-->
-            </div> <!--Interface-->
-        </div><!--Container-Header-->
-    </header>
 
     <main>
         <div class="container-main-topo" id="inicio">
@@ -96,7 +64,7 @@
                                         dimensões 3x3, onde dois jogadores disputam para completar uma linha com suas
                                         respectivas peças. O jogador que conseguir completar uma linha primeiro, vence a
                                         partida.</p>
-                                    <a href="jogo_da_velha.html" class="btn">Jogar</a>
+                                    <a href="jogo_da_velha.php" class="btn">Jogar</a>
                                 </div> <!--Titulo-->
                             </div> <!--TextBox-->
 
@@ -107,7 +75,7 @@
                                         estão as minas sem acioná-las. O jogo é jogado em um tabuleiro de dimensões
                                         10x10, onde o jogador deve clicar nas casas para descobrir onde estão as minas.
                                         O jogador que conseguir descobrir todas as minas, vence a partida.</p>
-                                    <a href="campo_minado.html" class="btn">Jogar</a>
+                                    <a href="campo_minado.php" class="btn">Jogar</a>
                                 </div> <!--Titulo-->
                             </div> <!--TextBox-->
 
@@ -118,7 +86,7 @@
                                         aleatório gerado pelo computador. O jogador deve adivinhar o número correto em
                                         até 10 tentativas. O jogador que conseguir adivinhar o número correto, vence a
                                         partida.</p>
-                                    <a href="adivinha.html" class="btn">Jogar</a>
+                                    <a href="adivinha.php" class="btn">Jogar</a>
                                 </div> <!--Titulo-->
                             </div> <!--TextBox-->
 
@@ -153,7 +121,7 @@
                             </div> <!--Img-Card-->
                             <div class="txt-card">
                                 <h4>Jogo da Velha</h4>
-                                <a href="jogo_da_velha.html" class="btn">Jogar Agora</a>
+                                <a href="jogo_da_velha.php" class="btn">Jogar Agora</a>
                             </div> <!--Txt-Card-->
                         </div> <!--Cards-->
 
@@ -163,7 +131,7 @@
                             </div> <!--Img-Card-->
                             <div class="txt-card">
                                 <h4>Campo Minado</h4>
-                                <a href="campo_minado.html" class="btn">Jogar Agora</a>
+                                <a href="campo_minado.php" class="btn">Jogar Agora</a>
                             </div> <!--Txt-Card-->
                         </div> <!--Cards-->
 
@@ -173,7 +141,7 @@
                             </div> <!--Img-Card-->
                             <div class="txt-card">
                                 <h4>Adivinhação</h4>
-                                <a href="adivinha.html" class="btn">Jogar Agora</a>
+                                <a href="adivinha.php" class="btn">Jogar Agora</a>
                             </div> <!--Txt-Card-->
                         </div> <!--Cards-->
                     </div> <!--Card-Jogos-->
@@ -284,43 +252,55 @@
                         </div> <!--Txt-Regras-->
                     </div> <!--Txt-Adivinhacao-->
 
+                    
                     <div class="comentarios-container">
                         <div class="comentarios titulo">
                             <h1>Comentarios</h1>
 
                             <div class="comentario-area">
-                                <form class="form" action="comentarios.php" method="POST">
+                                <form class="form" id="comentarioForm" action="comentarios.php" method="POST">
                                     <div class="form-floating">
 
-                                        <input type="text" name="nome" placeholder="" class="form-control required" >
+                                        <input required type="text" name="nome" placeholder="" class="form-control required" >
                                         <label for="nome">Nome</label>
                                         
                                     </div>
-                                    <span class="span-required">Digite seu nome</span>
+                                    
                                        
-                                            <textarea name="mensagem" placeholder="Digite seu comentario" class="textarea required" maxlength="200"></textarea>
-                                            <span class="span-required">Digite Algum comentario</span>
-                                        
-                                    <button class="btn">Enviar</button>
+                                            <textarea required name="mensagem" placeholder="Digite seu comentario" class="textarea required" maxlength="200"></textarea>
+                                            
+                                    <button type="submit" class="btn">Enviar</button>
                                 </form>
                             </div>
                         </div>
                     </div>
 
-
                     <div class="comentarios-container-dados">
                         <div class="comentarios-dados">
-                            <div class="comentario">
-                                <h3>Nome</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, recusandae. Adipisci dignissimos, illo expedita, odit quod modi esse, quam aspernatur commodi unde officia assumenda sunt corporis exercitationem sapiente quis quia!</p>
-                            </div>
+                        <?php
+                            $bd_servidor = "localhost";
+                            $bd_usuario = "vilelafinalpi";
+                            $bd_senha = "vilelajonathan";
+                            $bd_banco = "formulario";
+
+                            $conexao = new PDO("mysql:host=$bd_servidor;dbname=$bd_banco", $bd_usuario, $bd_senha);
+
+                            try {
+                                $sql = "SELECT * FROM comentarios";
+                                $consulta = $conexao->query($sql);
+                                while ($linha = $consulta->fetch()) {
+                                    // Exibe os dados escapados para evitar XSS
+                                    echo "<div class='comentario'>";
+                                    echo "<h3>" . htmlspecialchars($linha['nome']) . "</h3>";
+                                    echo "<p>" . htmlspecialchars($linha['mensagem']) . "</p>";
+                                    echo "</div>";
+                                }
+                            } catch (PDOException $erro) {
+                                echo "<h1>Erro: " . $erro->getMessage() . "</h1>";
+                            }
+                        ?>
                         </div>
-                    </div>
-                    
-
-
-                    
-
+                   
 
 
                 </div> <!--Flex-->
@@ -330,40 +310,18 @@
     </main>
 
 
+
+
     <!--Link JS-->
     <script src="js/index.js"></script>
     <!--Fim Link JS-->
 
 
-    <footer>
-        <div class="container-footer">
-            <div class="interface">
-                <div class="flex">
-                    <div class="footerLogo">
-                        <a href="index.html">
-                            <h1>OnGames.com</h1>
-                        </a>
-                    </div>
-                    <div class="footerInformacoes">
-                        <h3>Redes Sociais:</h3>
-                        <ul>
-                            <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-                            <li><a href="#"><i class="bi bi-instagram"></i></a></li>
-                            <li><a href="#"><i class="bi bi-twitter"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="colaboradores">
-                        <h3>Desenvolvedores:</h3>
-                        <ul>
-                            <li><a href="https://github.com/Vilelajlr" target="_blank">José Leandro Vilela</a></li>
-                            <li><a href="https://github.com/Jonathan-Davi" target="_blank">Jonathan Davi</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <p>Todos os Direitos Reservados. ©</p>
-        </div>
-    </footer>
+    <?php include 'footer.php'; ?>
+
+   
+    
+    
 
 </body>
 

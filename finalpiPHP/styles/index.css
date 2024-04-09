@@ -252,6 +252,7 @@ body{
     color: var(--ColorTxt);
 }
 
+
 .titulo h1{
     color: var(--ColorPurple);
     font-size: 2rem;
@@ -295,14 +296,13 @@ input{
     padding: 10px;
     border: 1px solid var(--ColorPurple);
     border-radius: 5px;
-    outline: none;
-}
 
+}
 
 
 .comentarios-container-dados {
     max-width: 500px;
-    max-height: 500px;
+    max-height: 300px;
     overflow-y: auto;
     color: var(--ColorTxt);
 }
@@ -320,10 +320,6 @@ input{
     font-size: 0.8rem;
 }
 
-.comentario h3{
-    font-size: 1rem;
-}
-
 .span-required{
     display: none;
     border: none;
@@ -331,6 +327,10 @@ input{
     font-size: 0.8rem;
 }
 
+
+.comentario h3{
+    font-size: 1rem;
+}
 
 
 

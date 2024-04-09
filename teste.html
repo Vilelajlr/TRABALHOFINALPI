@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Área de Comentários</title>
+</head>
+<body>
+
+<h2>Adicionar Comentário</h2>
+<form id="formComentario">
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome" required><br><br>
+    
+    <label for="comentario">Comentário:</label><br>
+    <textarea id="comentario" name="comentario" rows="4" cols="50" required></textarea><br><br>
+    
+    <button type="submit">Enviar Comentário</button>
+</form>
+
+<hr>
+
+<h2>Comentários</h2>
+<div id="comentarios">
+    <!-- Aqui serão exibidos os comentários -->
+</div>
+
+<script>
+document.getElementById("formComentario").addEventListener("submit", function(event) {
+    event.preventDefault(); // Evitar o envio padrão do formulário
+
+    var nome = document.getElementById("nome").value;
+    var comentario = document.getElementById("comentario").value;
+
+    // Crie um novo elemento para exibir o comentário
+    var novoComentario = document.createElement("div");
+    novoComentario.innerHTML = "<strong>" + nome + ":</strong> " + comentario + "<hr>";
+
+    // Adicione o novo comentário à lista de comentários
+    document.getElementById("comentarios").appendChild(novoComentario);
+
+    // Limpe os campos do formulário após o envio do comentário
+    document.getElementById("nome").value = "";
+    document.getElementById("comentario").value = "";
+});
+</script>
+
+</body>
+</html>
