@@ -55,7 +55,7 @@
     <link rel="stylesheet" href="styles_header/header.css">
 
 
-    <main id="entreemcontato">
+    <main id="contato">
         <div class="container-main">
             <div class="container-desfoque">
                 <div class="interface">

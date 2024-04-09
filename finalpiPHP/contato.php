@@ -11,12 +11,13 @@
     $sobrenome = $_POST['sobrenome'];
     $email = $_POST['email'];
     $celular = $_POST['celular'];
+    $motivo = $_POST['duvidas'];
     $text = $_POST['mensagem'];
 
     
     $sql = <<<SQL
-    INSERT INTO contato (nome, sobrenome, email, celular, textarea)
-    VALUES ('$nome', '$sobrenome', '$email', '$celular', '$text')
+    INSERT INTO contato (nome, sobrenome, email, celular, motivo,textarea)
+    VALUES ('$nome', '$sobrenome', '$email', '$celular', '$motivo', '$text')
     SQL;
 
     $conexao = "mysql: host=$bd_servidor; dbname=$bd_banco";
@@ -36,8 +37,7 @@
             
                 $destinatario = "joseleandro2807@gmail.com"; // Substitua pelo seu endereço de e-mail
             
-                // Use a função mail para enviar o e-mail
-                mail($destinatario, $assunto, $mensagem);
+
             
     
     

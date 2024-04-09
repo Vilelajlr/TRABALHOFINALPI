@@ -21,26 +21,13 @@
                         <span class="text">MENU</span>
                     </button>
 
-                    <?php
-                        // Verificar se está definido um valor para o array $_SERVER['REQUEST_URI']
-                        $currentPage = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
-
-                        // Função para adicionar classe 'active' ao link da página atual
-                        function isActive($url) {
-                            global $currentPage;
-                            echo $currentPage;
-                            if ($currentPage === $url) {
-                                echo 'active';
-                            }
-                        }
-                    ?>
-
                     <nav class="menu">
                         <ul>
-                            <li><a href="#inicio" class="<?php isActive('#inicio'); ?>">Início</a></li>
-                            <li><a href="#jogos" class="<?php isActive('#jogos'); ?>">Jogos</a></li>
-                            <li><a href="#final" class="<?php isActive('#final'); ?>">Como Jogar</a></li>
-                            <li><a href="entre_em_contato.php" class="<?php isActive('entre_em_contato.php'); ?>">Entre em Contato</a></li>
+                            <li><a href="index.php#inicio">Início</a></li>
+                            <li><a href="index.php#jogos">Jogos</a></li>
+                            <li><a href="index.php#final">Como Jogar</a></li>
+                            <li><a href="index.php#comentario">Comentários</a></li>
+                            <li><a href="entre_em_contato.php#contato">Entre em Contato</a></li>
                         </ul>
                     </nav>
                 </div> <!--Menu-Desktop-->

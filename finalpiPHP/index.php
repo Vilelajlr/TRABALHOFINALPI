@@ -112,7 +112,7 @@
             <div class="interface">
                 <div class="flex">
                     <div class="txt-Jogos">
-                        <h1>Jogos OnGames.com</h1>
+                        <h1 class="shadow" >Jogos OnGames.com</h1>
                     </div><!--fim txt-Jogos-->
                     <div class="card-jogos">
                         <div class="cards">
@@ -154,7 +154,7 @@
                 <div class="flex">
                     <div class="txt-jogoDaVelha txt-geral">
                         <div class="txt-historia">
-                            <h1 class="cor">História Jogo da Velha</h1>
+                            <h1 class="cor" >História Jogo da Velha</h1>
                             <p>O jogo da velha, uma das formas mais antigas de entretenimento, remonta a milhares de
                                 anos. Embora suas origens exatas sejam incertas, registros sugerem sua existência desde
                                 o antigo Egito, Grécia ou Roma. A versão moderna evoluiu na Europa no século XIX e
@@ -253,30 +253,33 @@
                     </div> <!--Txt-Adivinhacao-->
 
                     
-                    <div class="comentarios-container">
+                    <div class="comentarios-container" id="comentario">
                         <div class="comentarios titulo">
-                            <h1>Comentarios</h1>
+                            <h1>Deixe aqui o seu comentário!</h1>
+                            <p>O seu feedback é muito importante para nos ajudar a melhorar o site cada vez mais!</p>
 
                             <div class="comentario-area">
                                 <form class="form" id="comentarioForm" action="comentarios.php" method="POST">
                                     <div class="form-floating">
-
                                         <input required type="text" name="nome" placeholder="" class="form-control required" >
-                                        <label for="nome">Nome</label>
-                                        
-                                    </div>
-                                    
-                                       
-                                            <textarea required name="mensagem" placeholder="Digite seu comentario" class="textarea required" maxlength="200"></textarea>
-                                            
+                                        <label for="nome">Nome</label>            
+                                    </div>                   
+                                        <div class="texto">
+                                            <textarea required name="mensagem" placeholder="Deixe aqui o seu comentário... " class="textarea required"  maxlength="200"></textarea>
+                                        </div>             
                                     <button type="submit" class="btn">Enviar</button>
                                 </form>
                             </div>
                         </div>
                     </div>
 
+                    <div class="texto-inicial">
+                                <h1>Comentários e Feedbacks!</h1>
+                    </div>
+
                     <div class="comentarios-container-dados">
                         <div class="comentarios-dados">
+                           
                         <?php
                             $bd_servidor = "localhost";
                             $bd_usuario = "vilelafinalpi";
@@ -291,7 +294,7 @@
                                 while ($linha = $consulta->fetch()) {
                                     // Exibe os dados escapados para evitar XSS
                                     echo "<div class='comentario'>";
-                                    echo "<h3>" . htmlspecialchars($linha['nome']) . "</h3>";
+                                    echo "<h3>" . htmlspecialchars($linha['nome']) . " :</h3>";
                                     echo "<p>" . htmlspecialchars($linha['mensagem']) . "</p>";
                                     echo "</div>";
                                 }
@@ -301,27 +304,17 @@
                         ?>
                         </div>
                    
-
-
                 </div> <!--Flex-->
             </div> <!--Interface-->
         </div> <!--Container-Main-Final-->
 
     </main>
 
-
-
-
     <!--Link JS-->
     <script src="js/index.js"></script>
     <!--Fim Link JS-->
 
-
     <?php include 'footer.php'; ?>
-
-   
-    
-    
 
 </body>
 
