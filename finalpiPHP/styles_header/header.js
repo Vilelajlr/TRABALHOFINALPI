@@ -13,30 +13,30 @@ document.addEventListener('DOMContentLoaded', function(){
 
     
     // Função para adicionar/remover a classe 'active' dependendo da posição da página
-    function highlightCurrentLink() {
-        const scrollPosition = window.scrollY;
+    // function highlightCurrentLink() {
+    //     const scrollPosition = window.scrollY;
         
 
-        menuLinks.forEach(link => {
-            let sectionId = link.getAttribute('href');
+    //     menuLinks.forEach(link => {
+    //         let sectionId = link.getAttribute('href');
 
-            // Verifica se o link tem uma âncora
-            if (sectionId.includes('#')) {
-                sectionId = sectionId.split('#')[1]; // Extrai o ID da âncora
-            }
+    //         // Verifica se o link tem uma âncora
+    //         if (sectionId.includes('#')) {
+    //             sectionId = sectionId.split('#')[1]; // Extrai o ID da âncora
+    //         }
             
-            const section = document.getElementById(sectionId);
+    //         const section = document.getElementById(sectionId);
 
-            if (section && section.offsetTop <= scrollPosition && section.offsetTop + section.offsetHeight > scrollPosition) {
-                menuLinks.forEach(item => {
-                    item.classList.remove('active');
-                });
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-    }
+    //         if (section && section.offsetTop <= scrollPosition && section.offsetTop + section.offsetHeight > scrollPosition) {
+    //             menuLinks.forEach(item => {
+    //                 item.classList.remove('active');
+    //             });
+    //             link.classList.add('active');
+    //         } else {
+    //             link.classList.remove('active');
+    //         }
+    //     });
+    // }
 
     // Adiciona um listener de evento de rolagem
     window.addEventListener('scroll', highlightCurrentLink);

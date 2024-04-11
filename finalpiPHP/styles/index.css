@@ -358,10 +358,10 @@ input{
     color: var(--ColorPurple);
 }
 
-/* .shadow{
+.shadow{
     text-shadow: 5px 5px 5px black;
     border: none;
-} */
+}
 
 /* Estilo Responsivo */
 

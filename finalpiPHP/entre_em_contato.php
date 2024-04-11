@@ -1,3 +1,57 @@
+<?php
+$currentPage = basename($_SERVER['PHP_SELF']);
+?>
+
+<?php
+$bd_servidor = "localhost";
+$bd_usuario = "vilelafinalpi";
+$bd_senha = "vilelajonathan";
+$bd_banco = "formulario";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Verifica se todos os campos foram preenchidos
+    if (isset($_POST['nome']) && isset($_POST['sobrenome']) && isset($_POST['email']) && isset($_POST['celular']) && isset($_POST['duvidas']) && isset($_POST['mensagem'])) {
+
+        // Recupera os valores dos campos
+        $nome = $_POST['nome'];
+        $sobrenome = $_POST['sobrenome'];
+        $email = $_POST['email'];
+        $celular = $_POST['celular'];
+        $motivo = $_POST['duvidas'];
+        $text = $_POST['mensagem'];
+
+        // Validação dos campos (pode ser feita aqui)
+
+        // Cria a conexão com o banco de dados
+        try {
+            $conexao = new PDO("mysql:host=$bd_servidor;dbname=$bd_banco", $bd_usuario, $bd_senha);
+            $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            // Prepara a query SQL
+            $sql = "INSERT INTO contato (nome, sobrenome, email, celular, motivo, textarea) VALUES (:nome, :sobrenome, :email, :celular, :motivo, :text)";
+            $stmt = $conexao->prepare($sql);
+
+            // Bind dos parâmetros
+            $stmt->bindParam(':nome', $nome);
+            $stmt->bindParam(':sobrenome', $sobrenome);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':celular', $celular);
+            $stmt->bindParam(':motivo', $motivo);
+            $stmt->bindParam(':text', $text);
+
+            // Executa a query
+            $stmt->execute();
+
+        } catch (PDOException $e) {
+
+        }
+    } else {
+
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -62,7 +116,7 @@
                     <div class="flex">
                         <div class="containerFormulario">
                             <div class="formulario">
-                                <form action="contato.php" method="post" class="form" id="form">
+                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="form" id="form">
                                         <div class="txt-contato">
                                             <h1>Suporte OnGames</h1>
                                             <p>Entre em contato conosco para tirar dúvidas, dar sugestões ou relatar

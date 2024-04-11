@@ -1,3 +1,40 @@
+<?php
+$currentPage = basename($_SERVER['PHP_SELF']);
+?>
+
+<?php
+
+$bd_servidor = "localhost";
+$bd_usuario = "vilelafinalpi";
+$bd_senha = "vilelajonathan";
+$bd_banco = "formulario";
+
+// Verifica se os campos foram enviados via POST
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Obtém os dados dos campos
+    $nome = $_POST['nome'];
+    $mensagem = $_POST['mensagem'];
+
+    try {
+        // Conecta ao banco de dados
+        $conexao = new PDO("mysql:host=$bd_servidor;dbname=$bd_banco", $bd_usuario, $bd_senha);
+
+        // Prepara a consulta SQL usando um prepared statement
+        $sql = "INSERT INTO comentarios (nome, mensagem) VALUES (:nome, :mensagem)";
+        $stmt = $conexao->prepare($sql);
+
+        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':mensagem', $mensagem);
+
+        $stmt->execute();
+
+    } catch (PDOException $erro) {
+        echo "<h1>Erro: " . $erro->getMessage() . "</h1>";
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -38,8 +75,6 @@
     <link rel="stylesheet" href="styles/estilogeral.css">
     <link rel="stylesheet" href="styles_header/header.css">
     <!--Fim Link CSS-->
-    
-
 
     <title>OnGames</title>
 </head>
@@ -255,11 +290,11 @@
                     
                     <div class="comentarios-container" id="comentario">
                         <div class="comentarios titulo">
-                            <h1>Deixe aqui o seu comentário!</h1>
+                            <h1 class="shadow">Deixe aqui o seu comentário!</h1>
                             <p>O seu feedback é muito importante para nos ajudar a melhorar o site cada vez mais!</p>
 
                             <div class="comentario-area">
-                                <form class="form" id="comentarioForm" action="comentarios.php" method="POST">
+                                <form class="form" id="comentarioForm" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                                     <div class="form-floating">
                                         <input required type="text" name="nome" placeholder="" class="form-control required" >
                                         <label for="nome">Nome</label>            
@@ -274,7 +309,7 @@
                     </div>
 
                     <div class="texto-inicial">
-                                <h1>Comentários e Feedbacks!</h1>
+                        <h1 class="shadow">Comentários e Feedbacks!</h1>
                     </div>
 
                     <div class="comentarios-container-dados">
@@ -310,11 +345,39 @@
 
     </main>
 
-    <!--Link JS-->
-    <script src="js/index.js"></script>
-    <!--Fim Link JS-->
+
 
     <?php include 'footer.php'; ?>
+
+    <script>
+        function imgSlider(anything) {
+        const jogoDaVelha = document.querySelector('#jogaDaVelha');
+        const campoMinado = document.querySelector('.campoMinado');
+        const adivinhacao = document.querySelector('.adivinhacao');
+    
+        const slider = document.querySelector('.jogos');
+        slider.style.transition = 'all 1s ease-in-out';
+        slider.src = anything;
+    
+        if (anything == 'images/img2.png') {
+            adivinhacao.style.display = 'none';
+            jogoDaVelha.style.display = 'none';
+            campoMinado.style.display = 'block';
+    
+    
+        } else if (anything == 'images/img3.png') {
+            jogoDaVelha.style.display = 'none';
+            campoMinado.style.display = 'none';
+            adivinhacao.style.display = 'block';
+    
+    
+        } else {
+            campoMinado.style.display = 'none';
+            adivinhacao.style.display = 'none';
+            jogoDaVelha.style.display = 'block';
+        }
+    }
+    </script>
 
 </body>
 

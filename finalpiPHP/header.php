@@ -23,11 +23,11 @@
 
                     <nav class="menu">
                         <ul>
-                            <li><a href="index.php#inicio">Início</a></li>
-                            <li><a href="index.php#jogos">Jogos</a></li>
-                            <li><a href="index.php#final">Como Jogar</a></li>
-                            <li><a href="index.php#comentario">Comentários</a></li>
-                            <li><a href="entre_em_contato.php#contato">Entre em Contato</a></li>
+                            <li><a <?php if ($currentPage === 'index.php#inicio') echo 'class="active"'; ?> href="index.php#inicio">Início</a></li>
+                            <li><a <?php if ($currentPage === 'index.php#jogos') echo 'class="active"'; ?> href="index.php#jogos">Jogos</a></li>
+                            <li><a <?php if ($currentPage === 'index.php#final') echo 'class="active"'; ?> href="index.php#final">Como Jogar</a></li>
+                            <li><a <?php if ($currentPage === 'index.php#comentario') echo 'class="active"'; ?> href="index.php#comentario">Comentários</a></li>
+                            <li><a <?php if ($currentPage === 'entre_em_contato.php#contato') echo 'class="active"'; ?> href="entre_em_contato.php#contato">Entre em Contato</a></li>
                         </ul>
                     </nav>
                 </div> <!--Menu-Desktop-->
