@@ -163,7 +163,7 @@ body{
 
 .container-main-meio .txt-Jogos h1{
     font-size: 2rem;
-    font-weight: bolder;
+    font-weight: bold;
     margin: 10px 0;
     color: var(--ColorPurple);
 
@@ -218,6 +218,7 @@ body{
 
 }
 
+
 .container-main-final .interface{
     padding: 80px 4%;
 }
@@ -252,6 +253,13 @@ body{
     color: var(--ColorTxt);
 }
 
+.titulo p{
+    color: #f1f1f1;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+
 .titulo h1{
     color: var(--ColorPurple);
     font-size: 2rem;
@@ -266,18 +274,21 @@ body{
 
 }
 
-
+.comentarios-container{
+    border: 2px solid black;
+    padding: 30px 500px;
+    border-radius: 10px 30px 30px 30px;
+}
 
 .comentarios-container .comentarios .comentario-area .form{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-    padding: 20px;
     border-radius: 10px;
     margin: 20px 0;
     gap: 20px;
-
+    width: 500px;
 }
 
 input{
@@ -295,33 +306,38 @@ input{
     padding: 10px;
     border: 1px solid var(--ColorPurple);
     border-radius: 5px;
-    outline: none;
+
 }
 
-
+.texto{
+    width: 100%;
+}
 
 .comentarios-container-dados {
-    max-width: 500px;
-    max-height: 500px;
+    width: 800px;
+    max-height: 300px;
     overflow-y: auto;
     color: var(--ColorTxt);
+    border-radius: 20px;
 }
 
 .comentario{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     padding: 20px;
     border-radius: 10px;
-    margin: 20px 0;
-    gap: 20px;
+    margin: 10px 0;
+    gap: 10px;
     background-color: var(--background2);
-    text-align: justify;
-    font-size: 0.8rem;
+    text-align: start;
+    flex-direction: column;
+    box-shadow: inset 0 0 10px var(--ColorPurple);
 }
 
-.comentario h3{
-    font-size: 1rem;
+.comentario p{
+    margin-left: 30px;
+    font-size: 14px;
 }
 
 .span-required{
@@ -332,7 +348,20 @@ input{
 }
 
 
+.comentario h3{
+    font-size: 1rem;
+}
 
+.texto-inicial{
+    text-align: center;
+    font-size: 2rem;
+    color: var(--ColorPurple);
+}
+
+.shadow{
+    text-shadow: 5px 5px 5px black;
+    border: none;
+}
 
 /* Estilo Responsivo */
 
@@ -373,5 +402,17 @@ input{
     .imagens img{
         width: 90px;
     }
+    
+    .comentarios-container{
+        text-align: center;
+        padding: 40px 4%;
+    }
 
+    .comentarios-container .comentarios .comentario-area .form{
+        width: 100%;
+    }
+
+    .comentarios-container-dados{
+        width: 300px;
+    }
 }

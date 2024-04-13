@@ -1,0 +1,268 @@
+<?php
+$currentPage = basename($_SERVER['PHP_SELF']);
+?>
+
+<?php
+$bd_servidor = "localhost";
+$bd_usuario = "vilelafinalpi";
+$bd_senha = "vilelajonathan";
+$bd_banco = "formulario";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Verifica se todos os campos foram preenchidos
+    if (isset($_POST['nome']) && isset($_POST['sobrenome']) && isset($_POST['email']) && isset($_POST['celular']) && isset($_POST['duvidas']) && isset($_POST['mensagem'])) {
+
+        // Recupera os valores dos campos
+        $nome = $_POST['nome'];
+        $sobrenome = $_POST['sobrenome'];
+        $email = $_POST['email'];
+        $celular = $_POST['celular'];
+        $motivo = $_POST['duvidas'];
+        $text = $_POST['mensagem'];
+
+        // Validação dos campos (pode ser feita aqui)
+
+        // Cria a conexão com o banco de dados
+        try {
+            $conexao = new PDO("mysql:host=$bd_servidor;dbname=$bd_banco", $bd_usuario, $bd_senha);
+            $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            // Prepara a query SQL
+            $sql = "INSERT INTO contato (nome, sobrenome, email, celular, motivo, textarea) VALUES (:nome, :sobrenome, :email, :celular, :motivo, :text)";
+            $stmt = $conexao->prepare($sql);
+
+            // Bind dos parâmetros
+            $stmt->bindParam(':nome', $nome);
+            $stmt->bindParam(':sobrenome', $sobrenome);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':celular', $celular);
+            $stmt->bindParam(':motivo', $motivo);
+            $stmt->bindParam(':text', $text);
+
+            // Executa a query
+            $stmt->execute();
+
+        } catch (PDOException $e) {
+
+        }
+    } else {
+
+    }
+}
+?>
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logosemfundo.png" type="image/x-icon">
+
+    <!--Link Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Stalinist+One&display=swap"
+        rel="stylesheet">
+    <!--Fim Link Font-->
+
+    <!--Link JQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--Fim Link JQuery-->
+
+    <!--Link Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!--Fim Link Bootstrap-->
+
+    <!--Link CSS-->
+    <link rel="stylesheet" href="styles/entre_em_contato.css">
+    <link rel="stylesheet" href="styles/estilogeral.css">
+    <script src="js/contato.js"></script>
+    <!--Fim Link CSS-->
+
+    <!-- Link Favicon -->
+    <link rel="shortcut icon" href="images/logosemfundo.png" type="image/x-icon">
+    <!-- Fim Link Favicon -->
+
+
+    <title>OnGames - Contato</title>
+</head>
+
+<body>
+
+    <?php include 'header.php'; ?>
+    <script src="styles_header/header.js"></script>
+    <link rel="stylesheet" href="styles_header/header.css">
+
+
+    <main id="contato">
+        <div class="container-main">
+            <div class="container-desfoque">
+                <div class="interface">
+                    <div class="flex">
+                        <div class="containerFormulario">
+                            <div class="formulario">
+                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="form" id="form">
+                                        <div class="txt-contato">
+                                            <h1>Suporte OnGames</h1>
+                                            <p>Entre em contato conosco para tirar dúvidas, dar sugestões ou relatar
+                                                problemas.</p>
+
+                                        </div>
+                                        <div class="img-redes">
+                                            <a href="#"><i class="bi bi-facebook"></i></a>
+                                            <a href="#"><i class="bi bi-instagram"></i></a>
+                                            <a href="#"><i class="bi bi-twitter"></i></a> 
+                                            <hr>
+                                        </div>
+
+                                        <div class="flex-form">
+                                            <label>
+                                                <input  type="text" class="input required" name="nome">
+                                                <span class="spanColor">Primeiro nome*</span>
+                                            </label>
+
+                                            <label>
+                                                <input  placeholder="" type="text" class="input required" name="sobrenome" >
+                                                <span class="spanColor">Último nome*</span>
+                                                
+                                            </label>
+
+                                            
+                                        </div>
+
+                                        <span class="span-required">Nome ter no mínimo 3 caracteres</span>
+                                        <span class="span-required">Obrigatório um Sobrenome</span>
+
+                                        <label>
+                                            <input  placeholder="" type="text" class="input required" name="email" >
+                                            <span class="spanColor">email*</span>
+                                        </label>
+                                        
+                                        <span class="span-required">Digite um email válido</span>
+
+                                        <label>
+                                            <input  type="tel" placeholder="" class="input required" name="celular" >
+                                            <span class="spanColor">Número de Contato*</span>
+                                        </label>
+
+                                        
+                                        <span class="span-required">Digite um telefone válido</span>
+                                        
+
+                                        <label>
+                                            <div class="txtContato">
+                                                <span id="txtAjuda">Como podemos ajudar?</span>
+                                            </div>
+                                            <div class="radiosButtons">
+                                                <input type="radio" name="duvidas" id="duvidas" value="duvida" class="bo" checked>
+                                                <label for="duvidas">Dúvidas.</label>
+                                            </div>
+                                            <div class="radiosButtons">
+                                                <input type="radio" name="duvidas" id="sugestoes" value="sugestao" class="bo">
+                                                <label for="sugestoes">Sugestões.</label>
+                                            </div>
+                                            <div class="radiosButtons">
+                                                <input type="radio" name="duvidas" id="relatarProblemas" value="relata" class="bo" >
+                                                <label for="relatarProblemas">Relatar Problemas.</label>
+                                            </div>
+                                        </label>
+                                        <label>
+                                            <textarea  rows="3" placeholder="" class="input01 required" maxlength="2000" id="mensagem" cols="30" name="mensagem"></textarea>
+                                            <span id="ctxMsg">Digite algo aqui...</span>
+                                            
+                                        </label>
+                                        <span class="span-required">Informe alguma dúvida</span>
+                                        <label id="termos">
+                                            <div class="inputTermos">
+                                                <input type="checkbox" id="1" class="checkbox" name="checks[]" >
+                                                <label for="1">Eu aceito os <a href="#" class="termosCondicoes">termos e
+                                                        condições.</a></label>
+                                            </div>
+                                            <div class="inputTermos">
+                                                <input type="checkbox" id="2" class="checkbox" name="checks[]">
+                                                <label for="2">Quero Receber Atualizações por e-mail</label>
+                                            </div>
+                                            <div class="inputTermos">
+                                                <input  type="checkbox" id="3" class="checkbox" name="checks[]">
+                                                <label for="3">Participar de pesquisas de Feedback.</label>
+                                            </div>
+                                            <div class="inputTermos">
+                                                <input  type="checkbox" id="4" class="checkbox" name="checks[]">
+                                                <label for="4">Receber boletim informativo mensal.</label>
+                                            </div>
+
+
+                                        </label>
+
+                                        <button type="button" class="fancy" id="fancy">
+                                            <span class="top-key"></span>
+                                            <span class="text">Enviar</span>
+                                            <span class="bottom-key-1"></span>
+                                            <span class="bottom-key-2"></span>
+                                        </button>
+                               
+                            </div> <!--Formulario-->
+                        </div> <!--ContainerFormulario-->
+
+                        <div class="container-modal">
+                            <div id="fade" class="hide"></div>
+                            <div id="modal" class="hide">
+                                    <div class="modal-header">
+                                        <h3 class="titulo-modal">Dados Cadastrados</h3>
+                                            <div class="icones-modal">
+                                                <span class="editar">
+                                                    <i class="bi bi-pencil-square" title="Editar"></i>
+                                                </span>
+                                                <span class="fechar">
+                                                    <i class="bi bi-x-lg" title="Fechar"></i>
+                                                </span>
+                                            </div>
+                                        
+                                    </div> <!--Modal-Header-->
+                                    <div class="modal-body">
+                                        <p id="nomeCompleto"></p>
+                                        <p id="email"></p>
+                                        <p id="telefone"></p>
+                                        <p id="duvidas"></p>
+                                    </div> <!--Modal-Body-->
+                                    <div class="btn-modal">
+                                        <button class="limpar" type="reset">Limpar Campos</button>
+                                        <button type="submit" class="enviar">Enviar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+
+                    </div> <!--Flex-->
+                </div> <!--Interface-->
+            </div> <!--ContainerDesfoque-->
+        </div> <!--Container-->
+
+
+    </main>
+
+
+    <?php include 'footer.php'; ?>
+    <link rel="stylesheet" href="styles_header/footer.css">
+
+
+
+</body>
+
+</html>
