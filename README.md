@@ -27,3 +27,6 @@ Os usuários podem deixar comentários e feedbacks sobre o site. A funcionalidad
 
 ## Objetivo:
 Proporcionar entretenimento simples e acessível, com foco em jogos populares e intuitivos, enquanto coleta feedbacks para melhorias contínuas do site.
+
+
+## Criado por <a href="https://github.com/Vilelajlr">José Leandro Vilela</a> and <a href="https://github.com/Jonathan-Davi">Jonathan Davi</a>
